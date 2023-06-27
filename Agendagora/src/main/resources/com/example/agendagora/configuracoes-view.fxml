@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ImageInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.UsuarioController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="tabelaUsuario" layoutY="-8.0" onMouseClicked="#Habilitabotoes" prefHeight="347.0" prefWidth="800.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-8.0">
+              <columns>
+                <TableColumn fx:id="colunaCodigo" prefWidth="65.0" text="Codigo" />
+                <TableColumn fx:id="colunaNome" prefWidth="258.0" text="Nome" />
+                  <TableColumn fx:id="colunausuario" prefWidth="193.0" text="Usuário" />
+                  <TableColumn fx:id="colunaqtdvagas" prefWidth="180.0" text="Quantidade de atendimentos" />
+                  <TableColumn fx:id="colunaendereco" minWidth="0.0" prefWidth="133.0" text="Endereço" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <Pane prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <Pane prefHeight="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="414.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="129.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button contentDisplay="CENTER" layoutX="24.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="54.0" text="Voltar">
+               <effect>
+                  <ImageInput>
+                     <source>
+                        <Image url="@home-removebg-preview (1).png" />
+                     </source>
+                  </ImageInput>
+               </effect>
+            </Button>
+            <Button alignment="CENTER" layoutX="78.0" layoutY="33.0" mnemonicParsing="false" onAction="#novo" prefHeight="45.0" prefWidth="122.0" text="Novo Usuário" />
+            <Button fx:id="loginesenha" alignment="CENTER" disable="true" layoutX="246.0" layoutY="33.0" mnemonicParsing="false" onAction="#editarloginousenha" prefHeight="45.0" prefWidth="136.0" text="Altera Login ou Senha" />
+            <Button fx:id="excluir" alignment="CENTER" disable="true" layoutX="429.0" layoutY="33.0" mnemonicParsing="false" onAction="#excluir" prefHeight="45.0" prefWidth="122.0" text="Excluir " />
+            <Button fx:id="informacoes" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="580.0" layoutY="33.0" mnemonicParsing="false" onAction="#editarinformacoes" prefHeight="45.0" prefWidth="132.0" text="Outras Informações " />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

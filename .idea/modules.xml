@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Agendagora/Agendagora.iml" filepath="$PROJECT_DIR$/Agendagora/Agendagora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Agendagora-Semestral.iml" filepath="$PROJECT_DIR$/.idea/Agendagora-Semestral.iml" />
+    </modules>
+  </component>
+</project>

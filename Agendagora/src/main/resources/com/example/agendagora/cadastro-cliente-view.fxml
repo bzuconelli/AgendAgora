@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroClienteController">
+   <children>
+      <Label layoutX="136.0" layoutY="120.0" text="Código" />
+      <Label layoutX="139.0" layoutY="164.0" text="Nome" />
+      <Label layoutX="129.0" layoutY="209.0" text="Endereço" />
+      <Label layoutX="130.0" layoutY="256.0" text="Telefone" />
+      <Button layoutX="205.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="327.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <TextField fx:id="codigoField" disable="true" layoutX="205.0" layoutY="116.0" prefHeight="25.0" prefWidth="75.0" />
+      <TextField fx:id="nomeField" layoutX="205.0" layoutY="160.0" prefHeight="25.0" prefWidth="301.0" />
+      <TextField fx:id="enderecoField" layoutX="205.0" layoutY="205.0" prefHeight="25.0" prefWidth="301.0" />
+      <TextField fx:id="telefoneField" layoutX="205.0" layoutY="252.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label layoutX="155.0" layoutY="47.0" text="CADASTRO DE CLIENTE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="164.0" text="*" textFill="#f20c0c" />
+      <Label layoutX="179.0" layoutY="209.0" text="*" textFill="#f20c0c" />
+      <Label layoutX="176.0" layoutY="256.0" text="*" textFill="#f20c0c" />
+   </children>
+</AnchorPane>
