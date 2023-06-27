@@ -1,5 +1,6 @@
 package com.example.agendagora;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -17,7 +18,7 @@ public class ServicosController implements Initializable {
     @FXML
     TableView<Servico> tabelaServicos;
     @FXML
-    TableColumn<Servico, String> ColunaNome;
+    TableColumn<Servico, String> colunaNome;
 
     @FXML
     TableColumn<Servico, String> colunaEndreco;
@@ -31,10 +32,11 @@ public class ServicosController implements Initializable {
     TableColumn<Servico, String> colunaTipodeservico;
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ColunaNome.setCellValueFactory(new PropertyValueFactory<>("cliente"));
-        colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+
+        colunaNome.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getNome()));
+        colunaTelefone.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getTelefone()));
         colunaData.setCellValueFactory(new PropertyValueFactory<>("datadoservico"));
-        colunaEndreco.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+        colunaEndreco.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getEndereco()));
         colunaTipodeservico.setCellValueFactory(new PropertyValueFactory<>("tipodoservico"));
 
         ServicosDAO servicosDAO= new ServicosDAO();

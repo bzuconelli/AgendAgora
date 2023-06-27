@@ -24,7 +24,7 @@
          <children>
             <TableView fx:id="tabelaServicos" layoutY="82.0" prefHeight="457.0" prefWidth="799.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn fx:id="ColunaNome" prefWidth="237.0" text="Cliente" />
+                <TableColumn fx:id="colunaNome" prefWidth="237.0" text="Cliente" />
                 <TableColumn fx:id="colunaTelefone" prefWidth="133.0" text="Telefone" />
                   <TableColumn fx:id="colunaData" prefWidth="79.0" text="Data" />
                   <TableColumn fx:id="colunaEndreco" prefWidth="140.0" text="Endereço" />
