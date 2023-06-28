@@ -32,5 +32,10 @@ public class ServicosDAO {
 
         }
     }
+    public void insert(Servico novoservico) throws SQLException {
+//        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement())
+
+
+    }
 
 }

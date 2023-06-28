@@ -30,7 +30,7 @@ public class ServicosController implements Initializable {
     TableColumn<Servico, Date> colunaData;
     @FXML
     TableColumn<Servico, String> colunaTipodeservico;
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)  {
 
 
         colunaNome.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getNome()));
@@ -54,8 +54,10 @@ public class ServicosController implements Initializable {
         CadastroServicoController.servico=null;
         AgendaApplication.showModal("cadastro-servico-view");
         Servico novoservico= CadastroServicoController.servico;
-
-
+        if (novoservico != null) {
+            new ServicosDAO().insert(novoservico);
+            tabelaServicos.getItems().add(CadastroServicoController.servico);
+        }
     }
     public void voltar() throws IOException {
 

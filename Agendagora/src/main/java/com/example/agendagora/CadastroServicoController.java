@@ -21,6 +21,8 @@ public class CadastroServicoController {
     DatePicker datadoservicoField;
     @FXML
     TextField statusdoservicoField;
+    @FXML
+    TextField tipodeservicoField;
 
 
     public static Servico servico;
@@ -35,7 +37,8 @@ public class CadastroServicoController {
         novoServico.cliente.telefone=telefoneField.getText();
         novoServico.datadoservico= Date.valueOf(datadoservicoField.getValue());
         novoServico.estadodoservico= statusdoservicoField.getText();
-        if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() && !statusdoservicoField.getText().isBlank()){
+        novoServico.tipodoservico= tipodeservicoField.getText();
+        if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() && !statusdoservicoField.getText().isBlank() && !tipodeservicoField.getText().isBlank()){
             servico=novoServico;
             AgendaApplication.closeCurrentWindow();
 
