@@ -18,8 +18,8 @@
       </Label>
       <TextField fx:id="telefoneField" layoutX="91.0" layoutY="82.0" prefHeight="25.0" prefWidth="373.0" />
       <Button layoutX="500.0" layoutY="82.0" mnemonicParsing="false" onAction="#Pesqisar" text="Pesquisa" />
-      <TextField fx:id="nomeField" layoutX="91.0" layoutY="141.0" prefHeight="25.0" prefWidth="373.0" />
-      <TextField fx:id="enderecoField" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="373.0" />
+      <TextField fx:id="nomeField" editable="false" layoutX="91.0" layoutY="141.0" prefHeight="25.0" prefWidth="373.0" />
+      <TextField fx:id="enderecoField" editable="false" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="373.0" />
       <Label layoutX="33.0" layoutY="145.0" text="Nome" />
       <Label layoutX="27.0" layoutY="86.0" text="Telefone" />
       <TextField fx:id="statusdoservicoField" layoutX="101.0" layoutY="361.0" prefHeight="25.0" prefWidth="373.0" />

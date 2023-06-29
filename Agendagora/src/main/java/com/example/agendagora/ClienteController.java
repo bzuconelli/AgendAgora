@@ -34,6 +34,7 @@ public class ClienteController implements Initializable {
 
     @FXML
     TableColumn<Cliente, String> colunaTelefone;
+
     @FXML
     Button excluir;
     @FXML
@@ -51,6 +52,7 @@ public class ClienteController implements Initializable {
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
         colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+
         ClienteDAO clienteDAO= new ClienteDAO();
         try {
             List<Cliente> clientes = clienteDAO.getAll();

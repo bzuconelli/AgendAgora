@@ -24,11 +24,12 @@
          <children>
             <TableView fx:id="tabelaServicos" layoutY="82.0" prefHeight="457.0" prefWidth="799.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn fx:id="colunaNome" prefWidth="237.0" text="Cliente" />
                 <TableColumn fx:id="colunaTelefone" prefWidth="133.0" text="Telefone" />
                   <TableColumn fx:id="colunaData" prefWidth="79.0" text="Data" />
                   <TableColumn fx:id="colunaEndreco" prefWidth="140.0" text="Endereço" />
-                  <TableColumn fx:id="colunaTipodeservico" prefWidth="208.0" text="Tipo de Serviço" />
+                  <TableColumn fx:id="colunaTipodeservico" prefWidth="172.0" text="Tipo de Serviço" />
+                <TableColumn fx:id="colunaNome" prefWidth="237.0" text="Cliente" />
+                  <TableColumn fx:id="colunaCodigo" prefWidth="93.0" text="Codigo" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -48,7 +49,7 @@
                   </ImageInput>
                </effect></Button>
             <Button layoutX="133.0" layoutY="33.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
-            <Button layoutX="233.0" layoutY="33.0" mnemonicParsing="false" text="Cancelar" />
+            <Button layoutX="233.0" layoutY="33.0" mnemonicParsing="false" onAction="#excluir" text="Cancelar" />
             <Button layoutX="341.0" layoutY="33.0" mnemonicParsing="false" text="Editar" />
             <Button layoutX="646.0" layoutY="33.0" mnemonicParsing="false" text="Zapp" />
             <Button layoutX="445.0" layoutY="33.0" mnemonicParsing="false" text="Serviços do dia" />

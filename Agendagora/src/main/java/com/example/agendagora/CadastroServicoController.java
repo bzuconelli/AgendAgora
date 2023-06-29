@@ -26,18 +26,31 @@ public class CadastroServicoController {
 
 
     public static Servico servico;
+
+    Cliente clientepequisado;
     @FXML
     public void salvar() {
 
         Servico novoServico = new Servico();
         novoServico.cliente= new Cliente();
 
+
         novoServico.cliente.nome=nomeField.getText();
         novoServico.cliente.endereco=enderecoField.getText();
         novoServico.cliente.telefone=telefoneField.getText();
         novoServico.datadoservico= Date.valueOf(datadoservicoField.getValue());
+        if (Date.valueOf(datadoservicoField.getValue()) == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Iformações");
+            alert.setHeaderText(null);
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos" );
+
+            alert.showAndWait();
+
+        }
         novoServico.estadodoservico= statusdoservicoField.getText();
         novoServico.tipodoservico= tipodeservicoField.getText();
+        novoServico.cliente.codigo=clientepequisado.codigo;
         if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() && !statusdoservicoField.getText().isBlank() && !tipodeservicoField.getText().isBlank()){
             servico=novoServico;
             AgendaApplication.closeCurrentWindow();
@@ -46,7 +59,7 @@ public class CadastroServicoController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Iformações");
             alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser prenchidos" );
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos" );
 
             alert.showAndWait();
 
@@ -63,16 +76,14 @@ public class CadastroServicoController {
 
             pesquisacliente.telefone=telefoneField.getText();
 
-            System.out.println(pesquisacliente.telefone);
-
             boolean clienteexiste = new ClienteDAO().clienteexiste(pesquisacliente);
             if (clienteexiste){
-           Cliente clientestacadastrado= new ClienteDAO().clientecadastrado(pesquisacliente);
-            System.out.println(clientestacadastrado.codigo+clientestacadastrado.nome+clientestacadastrado.endereco+clientestacadastrado.telefone
-            );
+                Cliente clientestacadastrado= new ClienteDAO().clientecadastrado(pesquisacliente);
 
-               nomeField.setText(clientestacadastrado.nome);
-               enderecoField.setText(clientestacadastrado.endereco);
+                nomeField.setText(clientestacadastrado.nome);
+                enderecoField.setText(clientestacadastrado.endereco);
+                clientepequisado=clientestacadastrado;
+
            }else{
                Alert alert = new Alert(Alert.AlertType.WARNING);
                alert.setTitle("");
