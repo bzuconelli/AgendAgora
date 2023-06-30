@@ -1,15 +1,18 @@
 package com.example.agendagora;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class CadastroServicoController {
+public class CadastroServicoController implements Initializable {
     @FXML
     TextField telefoneField;
     @FXML
@@ -92,10 +95,27 @@ public class CadastroServicoController {
 
                alert.showAndWait();
            }
+        }
+    }
+    @FXML
+    public void cancelar() {
+        AgendaApplication.closeCurrentWindow();
 
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Servico servicoselecionado = CadastroServicoController.servico;
+
+        if (servicoselecionado != null) {
+
+            nomeField.setText(servicoselecionado.cliente.nome);
+            enderecoField.setText(servicoselecionado.cliente.endereco);
+            telefoneField.setText(servicoselecionado.cliente.telefone);
+            datadoservicoField.setValue(servicoselecionado.datadoservico.toLocalDate());
+            statusdoservicoField.setText(servicoselecionado.estadodoservico);
+            tipodeservicoField.setText(servicoselecionado.tipodoservico);
 
 
         }
-
     }
 }

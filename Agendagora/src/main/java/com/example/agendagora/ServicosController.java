@@ -84,6 +84,22 @@ public class ServicosController implements Initializable {
             }
         }
     }
+    public void editar() throws IOException, SQLException {
+        Servico servicoselecionado = tabelaServicos.getSelectionModel().getSelectedItem();
+        CadastroServicoController.servico = servicoselecionado;
+        AgendaApplication.showModal("cadastro-servico-view");
+        Servico servicoeditado= CadastroServicoController.servico;
+        if(servicoselecionado!= null){
+            servicoselecionado.cliente.telefone= servicoeditado.cliente.telefone;
+            servicoselecionado.cliente.nome= servicoeditado.cliente.nome;
+            servicoselecionado.datadoservico= servicoeditado.datadoservico;
+            servicoselecionado.estadodoservico=servicoeditado.estadodoservico;
+            new ServicosDAO().update(servicoeditado);
+            tabelaServicos.refresh();
+
+        }
+
+    }
     public void voltar() throws IOException {
 
         AgendaApplication.setRoot("menu-principal-view");

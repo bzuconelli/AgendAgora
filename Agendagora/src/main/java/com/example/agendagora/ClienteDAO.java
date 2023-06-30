@@ -8,7 +8,7 @@ public class ClienteDAO {
     public List<Cliente> getAll() throws SQLException {
 
         try (Statement statement = ConnectionSigleton.getConnection().createStatement();
-             ResultSet rs = statement.executeQuery("select * from cliente ORDER BY nomecliente asc")) {
+             ResultSet rs = statement.executeQuery("select * from cliente where ativook =1 order by nomecliente asc; ")) {
             List<Cliente> clientes = new ArrayList<>();
             while (rs.next()) {
                 Cliente cliente = new Cliente();
@@ -24,7 +24,7 @@ public class ClienteDAO {
 
     public void insert(Cliente novocliente) throws SQLException {
 
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("insert into cliente(nomecliente,enderecocliente,fonecliente) values (?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("insert into cliente(nomecliente,enderecocliente,fonecliente,ativook) values (?,?,?,1)", Statement.RETURN_GENERATED_KEYS)) {
 
             preparedStatement.setString(1, novocliente.nome);
             preparedStatement.setString(2, novocliente.endereco);
@@ -44,7 +44,7 @@ public class ClienteDAO {
 
     public void delete(Cliente clienteexcluido) throws SQLException {
 
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("delete from cliente  where clienteid = ?")) {
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update  cliente  set ativook = 0 where clienteid = ? ")) {
             preparedStatement.setInt(1, clienteexcluido.codigo);
             preparedStatement.execute();
         }
@@ -66,7 +66,7 @@ public class ClienteDAO {
     public boolean clienteexiste(Cliente cliente) throws SQLException {
 
         if (cliente != null) {
-            String sql = "select count(*)from cliente where fonecliente = ?";
+            String sql = "select count(*)from cliente where fonecliente = ? and ativook = 1 ";
             try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
                 preparedStatement.setString(1, cliente.telefone);
                 try (ResultSet resultado = preparedStatement.executeQuery()) {
@@ -84,7 +84,7 @@ public class ClienteDAO {
     }
 
     public Cliente clientecadastrado(Cliente clientepesquisa) throws SQLException {
-        String sql = "select * from cliente  where fonecliente = ? ";
+        String sql = "select * from cliente  where fonecliente = ? and ativook = 1 ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, clientepesquisa.telefone);
 

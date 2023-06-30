@@ -10,7 +10,7 @@ import java.util.List;
 public class ServicosDAO {
 
     public List<Servico> getAll() throws SQLException {
-        String sql =  "select os.datadoservico,os.tipodeservico,c.nomecliente,c.enderecocliente,c.fonecliente,ordendeservicoid from ordendeservico as os inner join cliente as c on os.cliente_clienteid = c.clienteid where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ?";
+        String sql =  "select os.datadoservico,os.tipodeservico,c.nomecliente,c.enderecocliente,c.fonecliente,ordendeservicoid from ordendeservico as os inner join cliente as c on os.cliente_clienteid = c.clienteid where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ? and c.ativook= 1";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
@@ -49,9 +49,6 @@ public class ServicosDAO {
             try (ResultSet rs = preparedStatement.getGeneratedKeys()) {
                 rs.next();
                 novoservico.codigo = rs.getInt(1);
-
-
-
             }
 
         }
@@ -64,6 +61,17 @@ public class ServicosDAO {
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set estadodaordem = 'cancelada' where ordendeservicoid = ? ")) {
             preparedStatement.setInt(1, servicocancelado.codigo);
             preparedStatement.execute();
+        }
+    }
+
+    public void update(Servico servicoselecionado) throws SQLException {
+
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set datadoservico =? where ordendeservicoid =?")){
+            preparedStatement.setDate(1,servicoselecionado.datadoservico);
+            preparedStatement.setInt(2,servicoselecionado.codigo);
+
+            preparedStatement.execute();
+
         }
     }
 

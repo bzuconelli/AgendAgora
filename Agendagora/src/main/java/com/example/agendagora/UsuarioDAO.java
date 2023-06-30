@@ -9,7 +9,7 @@ public class UsuarioDAO {
     public List<Usuario> getAll() throws SQLException {
 
         try (Statement statement = ConnectionSigleton.getConnection().createStatement();
-             ResultSet rs = statement.executeQuery("select * from usuario ORDER BY nome asc")) {
+             ResultSet rs = statement.executeQuery("select * from usuario where ativook =1 order by nome asc")) {
             List<Usuario> usuarios = new ArrayList<>();
             while (rs.next()) {
                 Usuario usuario = new Usuario();
@@ -31,7 +31,7 @@ public class UsuarioDAO {
     }
 
     public void insert(Usuario novousuario) throws SQLException {
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("insert into usuario (login,senha,nome) value (?,?,? )", Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("insert into usuario (login,senha,nome,ativook) value (?,?,?,1 )", Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, novousuario.usuario);
             preparedStatement.setString(2, novousuario.senha);
             preparedStatement.setString(3, novousuario.nome);
@@ -49,7 +49,7 @@ public class UsuarioDAO {
 
     public void delete(Usuario usuariexcluido) throws SQLException {
 
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("delete from usuario  where usuarioid = ?")) {
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update  usuario  set ativook = 0 where usuarioid = ?")) {
             preparedStatement.setInt(1, usuariexcluido.codigo);
             preparedStatement.execute();
         }
@@ -104,7 +104,7 @@ public class UsuarioDAO {
 
     }
     public boolean existe(Usuario usuario) throws SQLException {
-        String sql = "select count(*) from usuario  where login = ? and senha = ?";
+        String sql = "select count(*) from usuario  where login = ? and senha = ? and ativook = 1";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, usuario.usuario);
             preparedStatement.setString(2, usuario.senha);
