@@ -1,21 +1,28 @@
 package com.example.agendagora;
 
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
 
 public class ServicosController implements Initializable {
     @FXML
@@ -35,6 +42,17 @@ public class ServicosController implements Initializable {
     TableColumn<Servico, String> colunaTipodeservico;
    @FXML
    TableColumn<Servico,Integer> colunaCodigo;
+   @FXML
+   Button cancelar;
+   @FXML
+   Button editar;
+   @FXML
+   Button whatsapp;
+   @FXML
+   Button servicosdodia;
+
+
+
     public void initialize(URL url, ResourceBundle resourceBundle)  {
 
 
@@ -52,10 +70,15 @@ public class ServicosController implements Initializable {
             tabelaServicos.getItems().addAll(servicos);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
+
         }
 
 
+
     }
+
+    @FXML
     public void novo() throws IOException, SQLException {
         CadastroServicoController.servico=null;
         AgendaApplication.showModal("cadastro-servico-view");
@@ -84,25 +107,44 @@ public class ServicosController implements Initializable {
             }
         }
     }
+    @FXML
     public void editar() throws IOException, SQLException {
         Servico servicoselecionado = tabelaServicos.getSelectionModel().getSelectedItem();
-        CadastroServicoController.servico = servicoselecionado;
-        AgendaApplication.showModal("cadastro-servico-view");
-        Servico servicoeditado= CadastroServicoController.servico;
+        AlteraDataServicoController.servico = servicoselecionado;
+        AgendaApplication.showModal("editar-dataservico-view");
+        Servico servicoeditado= AlteraDataServicoController.servico;
         if(servicoselecionado!= null){
-            servicoselecionado.cliente.telefone= servicoeditado.cliente.telefone;
-            servicoselecionado.cliente.nome= servicoeditado.cliente.nome;
             servicoselecionado.datadoservico= servicoeditado.datadoservico;
-            servicoselecionado.estadodoservico=servicoeditado.estadodoservico;
+            servicoeditado.codigo=servicoselecionado.codigo;
             new ServicosDAO().update(servicoeditado);
             tabelaServicos.refresh();
 
         }
 
+
     }
+    @FXML
     public void voltar() throws IOException {
 
         AgendaApplication.setRoot("menu-principal-view");
+    }
+    @FXML
+    public void whatsapp ()throws URISyntaxException, IOException {
+        Servico servicotelefone =tabelaServicos.getSelectionModel().getSelectedItem();
+        URI link = new URI("https://wa.me/"+servicotelefone.cliente.telefone  );
+        Desktop.getDesktop().browse(link);
+    }
+    @FXML
+    public void servicosdodia(){
+
+    }
+    @FXML
+    public void Habilitabotoes() {
+        BooleanBinding algoSelecionado = tabelaServicos.getSelectionModel().selectedItemProperty().isNull();
+        cancelar.disableProperty().bind(algoSelecionado);
+        editar.disableProperty().bind(algoSelecionado);
+        whatsapp.disableProperty().bind(algoSelecionado);
+
     }
 
 }

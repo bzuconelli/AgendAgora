@@ -42,7 +42,7 @@ public class ServicosDAO {
             preparedStatement.setInt(1, novoservico.usuario.codigo);
             preparedStatement.setInt(2, novoservico.cliente.codigo);
             preparedStatement.setDate(3, novoservico.datadoservico);
-            preparedStatement.setString(4, novoservico.estadodoservico);
+            preparedStatement.setString(4, AgendaApplication.aberto);
             preparedStatement.setString(5, novoservico.tipodoservico);
 
             preparedStatement.execute();
@@ -66,13 +66,27 @@ public class ServicosDAO {
 
     public void update(Servico servicoselecionado) throws SQLException {
 
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set datadoservico =? where ordendeservicoid =?")){
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set datadoservico = ? where ordendeservicoid = ? ")){
             preparedStatement.setDate(1,servicoselecionado.datadoservico);
             preparedStatement.setInt(2,servicoselecionado.codigo);
 
             preparedStatement.execute();
 
         }
+    }
+    public int dataatual() throws SQLException {
+        String sql= "select count(*) from ordendeservico where datadoservico=curdate()and estadodaordem = ? and usuario_usuarioid =?";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, AgendaApplication.aberto);
+            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                int qtd =rs.getInt(1);
+                return qtd;
+
+            }
+        }
+
+
     }
 
 }

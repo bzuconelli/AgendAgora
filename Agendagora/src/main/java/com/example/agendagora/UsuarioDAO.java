@@ -123,9 +123,11 @@ public class UsuarioDAO {
     }
 
     public boolean loginexiste(Usuario usuario) throws SQLException {
-        String sql = "select count(*) from usuario  where login= ?";
+        String sql = "select count(*) from usuario  where login= ? and ativook = ? ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, usuario.usuario);
+            preparedStatement.setInt(2, AgendaApplication.ativookv);
+
 
             try (ResultSet resultado = preparedStatement.executeQuery()) {
                 resultado.next();
@@ -141,7 +143,7 @@ public class UsuarioDAO {
         }
     }
     public boolean qtdusuarios() throws SQLException {
-        String sql = "select count(*) from usuario ";
+        String sql = "select count(*) from usuario where ativook= 1 ";
         try( Statement statement = ConnectionSigleton.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(sql)){
                 rs.next();

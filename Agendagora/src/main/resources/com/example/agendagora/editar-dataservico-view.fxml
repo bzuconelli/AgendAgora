@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="87.0" prefWidth="291.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.AlteraDataServicoController">
+   <children>
+      <DatePicker fx:id="datadoservicoField" layoutX="11.0" layoutY="8.0" prefHeight="25.0" prefWidth="273.0" />
+      <Button layoutX="41.0" layoutY="48.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="147.0" layoutY="48.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
+</AnchorPane>

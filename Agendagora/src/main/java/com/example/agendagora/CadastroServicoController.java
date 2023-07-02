@@ -22,13 +22,14 @@ public class CadastroServicoController implements Initializable {
     TextField enderecoField;
     @FXML
     DatePicker datadoservicoField;
-    @FXML
-    TextField statusdoservicoField;
+
     @FXML
     TextField tipodeservicoField;
 
 
     public static Servico servico;
+
+
 
     Cliente clientepequisado;
     @FXML
@@ -36,25 +37,19 @@ public class CadastroServicoController implements Initializable {
 
         Servico novoServico = new Servico();
         novoServico.cliente= new Cliente();
-
-
         novoServico.cliente.nome=nomeField.getText();
         novoServico.cliente.endereco=enderecoField.getText();
         novoServico.cliente.telefone=telefoneField.getText();
-        novoServico.datadoservico= Date.valueOf(datadoservicoField.getValue());
-        if (Date.valueOf(datadoservicoField.getValue()) == null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Iformações");
-            alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos" );
-
-            alert.showAndWait();
-
+        if (!(datadoservicoField.getValue() ==null)) {
+            novoServico.datadoservico = Date.valueOf(datadoservicoField.getValue());
         }
-        novoServico.estadodoservico= statusdoservicoField.getText();
-        novoServico.tipodoservico= tipodeservicoField.getText();
-        novoServico.cliente.codigo=clientepequisado.codigo;
-        if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() && !statusdoservicoField.getText().isBlank() && !tipodeservicoField.getText().isBlank()){
+
+        if (clientepequisado!= null){
+            novoServico.tipodoservico= tipodeservicoField.getText();
+            novoServico.cliente.codigo=clientepequisado.codigo;
+        }
+
+        if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() &&  !tipodeservicoField.getText().isBlank() && datadoservicoField.getValue()!=null){
             servico=novoServico;
             AgendaApplication.closeCurrentWindow();
 
@@ -67,15 +62,13 @@ public class CadastroServicoController implements Initializable {
             alert.showAndWait();
 
         }
-
-
     }
 
     @FXML
     public void Pesqisar() throws  SQLException {
         Cliente pesquisacliente =new Cliente();
 
-        if (!telefoneField.getText().isBlank()){
+        if (!telefoneField.getText().isBlank() && telefoneField!= null){
 
             pesquisacliente.telefone=telefoneField.getText();
 
@@ -106,14 +99,17 @@ public class CadastroServicoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Servico servicoselecionado = CadastroServicoController.servico;
 
+
         if (servicoselecionado != null) {
 
             nomeField.setText(servicoselecionado.cliente.nome);
             enderecoField.setText(servicoselecionado.cliente.endereco);
             telefoneField.setText(servicoselecionado.cliente.telefone);
-            datadoservicoField.setValue(servicoselecionado.datadoservico.toLocalDate());
-            statusdoservicoField.setText(servicoselecionado.estadodoservico);
             tipodeservicoField.setText(servicoselecionado.tipodoservico);
+            datadoservicoField.setValue(servicoselecionado.datadoservico.toLocalDate());
+
+
+
 
 
         }

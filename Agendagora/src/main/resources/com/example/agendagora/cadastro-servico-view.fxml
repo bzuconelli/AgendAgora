@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="599.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroServicoController">
+<AnchorPane prefHeight="456.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroServicoController">
    <children>
-      <Button layoutX="148.0" layoutY="543.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-      <Button layoutX="319.0" layoutY="543.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button layoutX="156.0" layoutY="396.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="316.0" layoutY="396.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
       <Label layoutX="196.0" layoutY="14.0" text="AGENDAR SERVIÇO">
          <font>
             <Font size="24.0" />
@@ -18,16 +18,14 @@
       </Label>
       <TextField fx:id="telefoneField" layoutX="91.0" layoutY="82.0" prefHeight="25.0" prefWidth="373.0" />
       <Button layoutX="500.0" layoutY="82.0" mnemonicParsing="false" onAction="#Pesqisar" text="Pesquisa" />
-      <TextField fx:id="nomeField" editable="false" layoutX="91.0" layoutY="141.0" prefHeight="25.0" prefWidth="373.0" />
-      <TextField fx:id="enderecoField" editable="false" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="373.0" />
+      <TextField fx:id="nomeField" disable="true" editable="false" layoutX="91.0" layoutY="141.0" prefHeight="25.0" prefWidth="373.0" />
+      <TextField fx:id="enderecoField" disable="true" editable="false" layoutX="91.0" layoutY="193.0" prefHeight="25.0" prefWidth="373.0" />
       <Label layoutX="33.0" layoutY="145.0" text="Nome" />
       <Label layoutX="27.0" layoutY="86.0" text="Telefone" />
-      <TextField fx:id="statusdoservicoField" layoutX="101.0" layoutY="361.0" prefHeight="25.0" prefWidth="373.0" />
       <Label layoutX="36.0" layoutY="197.0" text="Enderço" />
-      <DatePicker fx:id="datadoservicoField" layoutX="93.0" layoutY="299.0" prefHeight="25.0" prefWidth="373.0" />
-      <Label layoutX="46.0" layoutY="303.0" text="Data" />
-      <Label layoutX="46.0" layoutY="365.0" text="Status" />
-      <TextField fx:id="tipodeservicoField" layoutX="102.0" layoutY="418.0" prefHeight="25.0" prefWidth="373.0" />
-      <Label layoutX="18.0" layoutY="422.0" text="Tipo de servico" />
+      <DatePicker fx:id="datadoservicoField" layoutX="99.0" layoutY="300.0" prefHeight="25.0" prefWidth="373.0" />
+      <Label layoutX="45.0" layoutY="304.0" text="Data" />
+      <TextField fx:id="tipodeservicoField" layoutX="107.0" layoutY="246.0" prefHeight="25.0" prefWidth="356.0" />
+      <Label layoutX="18.0" layoutY="250.0" text="Tipo de servico" />
    </children>
 </AnchorPane>

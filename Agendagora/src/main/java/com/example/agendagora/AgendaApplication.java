@@ -13,6 +13,10 @@ import java.io.IOException;
 public class AgendaApplication extends Application {
     private static Scene scene;
     private static Stage modalDialog;
+    public static String aberto="Aberto";
+    public static int ativookv=1;
+
+
 
     public void start(Stage stage) throws IOException, java.io.IOException {
 

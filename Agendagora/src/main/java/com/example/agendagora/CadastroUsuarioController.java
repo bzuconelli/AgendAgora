@@ -38,21 +38,11 @@ public class CadastroUsuarioController implements Initializable {
         novoUsuario.nome = nomeField.getText();
         novoUsuario.usuario = usuarioField.getText();
         novoUsuario.senha = senhaField.getText();
-        boolean loginexiste = new UsuarioDAO().loginexiste(novoUsuario);
+
 
             if (!nomeField.getText().isEmpty() && !senhaField.getText().isEmpty() && !usuarioField.getText().isEmpty()) {
-                if (!loginexiste) {
-                    usuario = novoUsuario;
-                    AgendaApplication.closeCurrentWindow();
-                } else{
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Imformações");
-                    alert.setHeaderText(null);
-                    alert.setContentText("O login Ja existe digite outro ");
-
-                    alert.showAndWait();
-
-                }
+                usuario = novoUsuario;
+                AgendaApplication.closeCurrentWindow();
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
