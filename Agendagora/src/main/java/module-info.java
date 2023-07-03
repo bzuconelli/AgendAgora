@@ -7,6 +7,7 @@ module com.example.agendagora {
 
 
 
+
     opens com.example.agendagora to javafx.fxml;
     exports com.example.agendagora;
 }

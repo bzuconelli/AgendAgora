@@ -38,21 +38,20 @@ public class CadastroUsuarioController implements Initializable {
         novoUsuario.nome = nomeField.getText();
         novoUsuario.usuario = usuarioField.getText();
         novoUsuario.senha = senhaField.getText();
+        if (!nomeField.getText().isEmpty() && !senhaField.getText().isEmpty() && !usuarioField.getText().isEmpty()) {
+            usuario = novoUsuario;
+            AgendaApplication.closeCurrentWindow();
 
+        } else {
 
-            if (!nomeField.getText().isEmpty() && !senhaField.getText().isEmpty() && !usuarioField.getText().isEmpty()) {
-                usuario = novoUsuario;
-                AgendaApplication.closeCurrentWindow();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Imformações");
+            alert.setHeaderText(null);
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos");
 
-            } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Imformações");
-                alert.setHeaderText(null);
-                alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos");
-
-                alert.showAndWait();
-            }
+            alert.showAndWait();
         }
+    }
 
 
 

@@ -33,7 +33,7 @@ public class CadastroServicoController implements Initializable {
 
     Cliente clientepequisado;
     @FXML
-    public void salvar() {
+    public void salvar() throws SQLException {
 
         Servico novoServico = new Servico();
         novoServico.cliente= new Cliente();
@@ -50,8 +50,19 @@ public class CadastroServicoController implements Initializable {
         }
 
         if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() &&  !tipodeservicoField.getText().isBlank() && datadoservicoField.getValue()!=null){
-            servico=novoServico;
-            AgendaApplication.closeCurrentWindow();
+            boolean temvaga = new ServicosDAO().qtdvagaspordia(novoServico);
+            if(temvaga) {
+                servico = novoServico;
+                AgendaApplication.closeCurrentWindow();
+            }else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Iformações");
+                alert.setHeaderText(null);
+                alert.setContentText(" Sem vagas dispoivel neste dia " );
+
+                alert.showAndWait();
+
+            }
 
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);

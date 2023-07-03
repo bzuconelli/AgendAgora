@@ -59,19 +59,21 @@ public class UsuarioController implements Initializable {
         CadastroUsuarioController.usuario=null;
         AgendaApplication.showModal("cadastro-login-view");
         Usuario novousuario= CadastroUsuarioController.usuario;
-        boolean loginexiste = new UsuarioDAO().loginexiste(novousuario);
-        if (!loginexiste ) {
-            new UsuarioDAO().insert(novousuario);
-            tabelaUsuario.getItems().add(CadastroUsuarioController.usuario);
+        if(novousuario!=null) {
+            boolean loginexiste = new UsuarioDAO().loginexiste(novousuario);
+            if (!loginexiste) {
+                new UsuarioDAO().insert(novousuario);
+                tabelaUsuario.getItems().add(CadastroUsuarioController.usuario);
 
-        } else {
+            } else {
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Imformações");
-            alert.setHeaderText(null);
-            alert.setContentText("O login Ja existe digite outro ");
-            alert.showAndWait();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Imformações");
+                alert.setHeaderText(null);
+                alert.setContentText("O login Ja existe digite outro ");
+                alert.showAndWait();
 
+            }
         }
 
     }

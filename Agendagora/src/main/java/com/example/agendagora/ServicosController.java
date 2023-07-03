@@ -131,7 +131,7 @@ public class ServicosController implements Initializable {
     @FXML
     public void whatsapp ()throws URISyntaxException, IOException {
         Servico servicotelefone =tabelaServicos.getSelectionModel().getSelectedItem();
-        URI link = new URI("https://wa.me/"+servicotelefone.cliente.telefone  );
+        URI link = new URI("https://wa.me/5547"+servicotelefone.cliente.telefone  );
         Desktop.getDesktop().browse(link);
     }
     @FXML

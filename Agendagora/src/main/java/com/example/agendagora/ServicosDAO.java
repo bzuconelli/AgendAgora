@@ -10,7 +10,7 @@ import java.util.List;
 public class ServicosDAO {
 
     public List<Servico> getAll() throws SQLException {
-        String sql =  "select os.datadoservico,os.tipodeservico,c.nomecliente,c.enderecocliente,c.fonecliente,ordendeservicoid from ordendeservico as os inner join cliente as c on os.cliente_clienteid = c.clienteid where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ? and c.ativook= 1";
+        String sql = "select os.datadoservico,os.tipodeservico,c.nomecliente,c.enderecocliente,c.fonecliente,ordendeservicoid from ordendeservico as os inner join cliente as c on os.cliente_clienteid = c.clienteid where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ? and c.ativook= 1";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
@@ -24,7 +24,7 @@ public class ServicosDAO {
                     servico1.cliente.nome = rs.getString(3);
                     servico1.cliente.endereco = rs.getString(4);
                     servico1.cliente.telefone = rs.getString(5);
-                    servico1.codigo= rs.getInt(6);
+                    servico1.codigo = rs.getInt(6);
 
                     servicos.add(servico1);
                 }
@@ -34,11 +34,12 @@ public class ServicosDAO {
 
         }
     }
+
     public void insert(Servico novoservico) throws SQLException {
         String sql = "insert into ordendeservico(usuario_usuarioid,cliente_clienteid,datadoservico,estadodaordem,tipodeservico) values ( ?, ?,?,?,?)";
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
-            novoservico.usuario= UsuarioSigleton.usuarioteste;
+            novoservico.usuario = UsuarioSigleton.usuarioteste;
             preparedStatement.setInt(1, novoservico.usuario.codigo);
             preparedStatement.setInt(2, novoservico.cliente.codigo);
             preparedStatement.setDate(3, novoservico.datadoservico);
@@ -66,22 +67,52 @@ public class ServicosDAO {
 
     public void update(Servico servicoselecionado) throws SQLException {
 
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set datadoservico = ? where ordendeservicoid = ? ")){
-            preparedStatement.setDate(1,servicoselecionado.datadoservico);
-            preparedStatement.setInt(2,servicoselecionado.codigo);
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set datadoservico = ? where ordendeservicoid = ? ")) {
+            preparedStatement.setDate(1, servicoselecionado.datadoservico);
+            preparedStatement.setInt(2, servicoselecionado.codigo);
 
             preparedStatement.execute();
 
         }
     }
+
+    public boolean qtdvagaspordia(Servico servico) throws SQLException {
+        String sql = "select count(*) from ordendeservico where datadoservico = ? and estadodaordem = ? and usuario_usuarioid =?";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setDate(1, servico.datadoservico);
+            preparedStatement.setString(2, AgendaApplication.aberto);
+            preparedStatement.setInt(3, UsuarioSigleton.usuarioteste.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                rs.next();
+                int qtd;
+                qtd = rs.getInt(1);
+                if (qtd < UsuarioSigleton.usuarioteste.qtdvagas || qtd == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+
+    }
+
     public int dataatual() throws SQLException {
-        String sql= "select count(*) from ordendeservico where datadoservico=curdate()and estadodaordem = ? and usuario_usuarioid =?";
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate()and estadodaordem = ? and usuario_usuarioid =?";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, AgendaApplication.aberto);
             preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
-                int qtd =rs.getInt(1);
-                return qtd;
+                rs.next();
+                int qtd;
+                qtd = rs.getInt(1);
+                if (qtd > 0) {
+                    int qdtfinal = UsuarioSigleton.usuarioteste.qtdvagas - qtd;
+                    return qdtfinal;
+
+                } else {
+                    return UsuarioSigleton.usuarioteste.qtdvagas;
+                }
 
             }
         }
@@ -89,4 +120,88 @@ public class ServicosDAO {
 
     }
 
+    public int dataatual1() throws SQLException {
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 1 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, AgendaApplication.aberto);
+            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                rs.next();
+                int qtd;
+                qtd = rs.getInt(1);
+                if (qtd > 0) {
+                    int qdtfinal = UsuarioSigleton.usuarioteste.qtdvagas - qtd;
+                    return qdtfinal;
+
+                } else {
+                    return UsuarioSigleton.usuarioteste.qtdvagas;
+                }
+
+            }
+        }
+    }
+
+    public int dataatual2() throws SQLException {
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, AgendaApplication.aberto);
+            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                rs.next();
+                int qtd;
+                qtd = rs.getInt(1);
+                if (qtd > 0) {
+                    int qdtfinal = UsuarioSigleton.usuarioteste.qtdvagas - qtd;
+                    return qdtfinal;
+
+                } else {
+                    return UsuarioSigleton.usuarioteste.qtdvagas;
+                }
+
+            }
+        }
+    }
+    public int dataatual3() throws SQLException {
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, AgendaApplication.aberto);
+            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                rs.next();
+                int qtd;
+                qtd = rs.getInt(1);
+                if (qtd > 0) {
+                    int qdtfinal = UsuarioSigleton.usuarioteste.qtdvagas - qtd;
+                    return qdtfinal;
+
+                } else {
+                    return UsuarioSigleton.usuarioteste.qtdvagas;
+                }
+
+            }
+        }
+    }
+    public int dataatual4() throws SQLException {
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, AgendaApplication.aberto);
+            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                rs.next();
+                int qtd;
+                qtd = rs.getInt(1);
+                if (qtd > 0) {
+                    int qdtfinal = UsuarioSigleton.usuarioteste.qtdvagas - qtd;
+                    return qdtfinal;
+
+                } else {
+                    return UsuarioSigleton.usuarioteste.qtdvagas;
+                }
+
+            }
+        }
+    }
+
 }
+
+
