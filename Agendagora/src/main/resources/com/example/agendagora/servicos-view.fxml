@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.ImageInput?>
@@ -11,7 +12,10 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.ServicosController">
    <top>
-      <AnchorPane prefHeight="51.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="51.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox fx:id="servicosdodia" layoutX="51.0" layoutY="17.0" mnemonicParsing="false" text="Exibir Serviços do dia" />
+         </children></AnchorPane>
    </top>
    <left>
       <Pane prefHeight="426.0" BorderPane.alignment="CENTER" />

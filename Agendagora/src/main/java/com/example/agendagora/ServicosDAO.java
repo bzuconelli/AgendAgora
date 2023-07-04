@@ -36,15 +36,15 @@ public class ServicosDAO {
     }
 
     public void insert(Servico novoservico) throws SQLException {
-        String sql = "insert into ordendeservico(usuario_usuarioid,cliente_clienteid,datadoservico,estadodaordem,tipodeservico) values ( ?, ?,?,?,?)";
+        String sql = "insert into ordendeservico(usuario_usuarioid,cliente_clienteid,datadoservico,estadodaordem,tipodeservico) values ( ?, ?,?,'aberto',?)";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             novoservico.usuario = UsuarioSigleton.usuarioteste;
             preparedStatement.setInt(1, novoservico.usuario.codigo);
             preparedStatement.setInt(2, novoservico.cliente.codigo);
             preparedStatement.setDate(3, novoservico.datadoservico);
-            preparedStatement.setString(4, AgendaApplication.aberto);
-            preparedStatement.setString(5, novoservico.tipodoservico);
+
+            preparedStatement.setString(4, novoservico.tipodoservico);
 
             preparedStatement.execute();
             try (ResultSet rs = preparedStatement.getGeneratedKeys()) {

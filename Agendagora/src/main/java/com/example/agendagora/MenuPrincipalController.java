@@ -57,6 +57,10 @@ public class MenuPrincipalController  implements Initializable  {
     public void abrirtelaservicos() throws IOException {
         AgendaApplication.setRoot("servicos-view");
     }
+    @FXML
+    public void abrirtelaprojetos() throws IOException {
+        AgendaApplication.setRoot("projetos-view");
+    }
 
     @FXML
     public void voltar() throws IOException {

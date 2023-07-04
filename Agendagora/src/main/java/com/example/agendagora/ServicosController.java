@@ -2,6 +2,7 @@ package com.example.agendagora;
 
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -10,8 +11,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.event.ActionEvent;
 
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -49,11 +52,13 @@ public class ServicosController implements Initializable {
    @FXML
    Button whatsapp;
    @FXML
-   Button servicosdodia;
+    private Checkbox myCheckBox;
+
 
 
 
     public void initialize(URL url, ResourceBundle resourceBundle)  {
+
 
 
         colunaNome.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getNome()));
@@ -67,15 +72,13 @@ public class ServicosController implements Initializable {
         try {
 
             List<Servico> servicos = servicosDAO.getAll();
+
             tabelaServicos.getItems().addAll(servicos);
         } catch (SQLException e) {
             throw new RuntimeException(e);
 
 
         }
-
-
-
     }
 
     @FXML
@@ -134,10 +137,7 @@ public class ServicosController implements Initializable {
         URI link = new URI("https://wa.me/5547"+servicotelefone.cliente.telefone  );
         Desktop.getDesktop().browse(link);
     }
-    @FXML
-    public void servicosdodia(){
 
-    }
     @FXML
     public void Habilitabotoes() {
         BooleanBinding algoSelecionado = tabelaServicos.getSelectionModel().selectedItemProperty().isNull();

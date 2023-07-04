@@ -90,7 +90,7 @@
                   </ImageView>
                   <Button layoutX="339.0" layoutY="72.0" mnemonicParsing="false" onAction="#abrirtelaconfiguracoes" prefHeight="45.0" prefWidth="122.0" text="Usuário" />
                   <Button layoutX="500.0" layoutY="72.0" mnemonicParsing="false" onAction="#abrirtelaservicos" prefHeight="45.0" prefWidth="122.0" text="Serviços" />
-                  <Button layoutX="664.0" layoutY="72.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="122.0" text="Projetos" />
+                  <Button layoutX="664.0" layoutY="72.0" mnemonicParsing="false" onAction="#abrirtelaprojetos" prefHeight="45.0" prefWidth="122.0" text="Projetos" />
                   <Button layoutX="192.0" layoutY="72.0" mnemonicParsing="false" onAction="#abrirtelaclientes" prefHeight="45.0" prefWidth="122.0" text="Clientes" />
                </children>
             </Pane>
