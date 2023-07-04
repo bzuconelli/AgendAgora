@@ -24,7 +24,7 @@ public class CadastroClienteController implements Initializable {
     TextField telefoneField;
 
     public static Cliente cliente;
-
+//^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$
     @FXML
     public void salvar() {
 
@@ -41,9 +41,9 @@ public class CadastroClienteController implements Initializable {
             AgendaApplication.closeCurrentWindow();
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Iformações");
+            alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser prenchidos" );
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos" );
 
             alert.showAndWait();
 

@@ -7,25 +7,66 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroUsuarioController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroUsuarioController">
    <children>
-      <Label layoutX="129.0" layoutY="120.0" text="Código" />
-      <Label layoutX="131.0" layoutY="164.0" text="Nome" />
-      <Label layoutX="129.0" layoutY="209.0" text="Usuário" />
-      <Label layoutX="130.0" layoutY="256.0" text="Senha" />
-      <Button layoutX="205.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-      <Button layoutX="327.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-      <TextField fx:id="codigoField" disable="true" layoutX="205.0" layoutY="116.0" prefHeight="25.0" prefWidth="75.0" />
-      <TextField fx:id="nomeField" layoutX="205.0" layoutY="160.0" prefHeight="25.0" prefWidth="301.0" />
-      <TextField fx:id="usuarioField" layoutX="205.0" layoutY="205.0" prefHeight="25.0" prefWidth="301.0" />
-      <Label layoutX="155.0" layoutY="47.0" text="CADASTRO DE USUÁRIO">
+      <Label layoutX="129.0" layoutY="116.0" text="Código">
          <font>
-            <Font size="24.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="131.0" layoutY="161.0" text="Nome">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="123.0" layoutY="208.0" text="Usuário">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="256.0" text="Senha">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font></Label>
+      <Button layoutX="205.0" layoutY="342.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar" AnchorPane.bottomAnchor="25.0">
+         <font>
+            <Font name="Bauhaus 93" size="20.0" />
+         </font></Button>
+      <Button layoutX="327.0" layoutY="342.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" AnchorPane.bottomAnchor="25.0">
+         <font>
+            <Font name="Bauhaus 93" size="20.0" />
+         </font></Button>
+      <TextField fx:id="codigoField" disable="true" layoutX="205.0" layoutY="116.0" prefHeight="25.0" prefWidth="75.0" style="-fx-text-fill: #000000;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="nomeField" layoutX="205.0" layoutY="158.0" prefHeight="25.0" prefWidth="301.0" style="-fx-text-fill: #000000;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="usuarioField" layoutX="205.0" layoutY="205.0" prefHeight="25.0" prefWidth="301.0" style="-fx-text-fill: #000000;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font></TextField>
+      <Label layoutX="105.0" layoutY="45.0" text="CADASTRO DE USUÁRIO">
+         <font>
+            <Font name="Bauhaus 93" size="37.0" />
          </font>
       </Label>
-      <PasswordField fx:id="senhaField" layoutX="206.0" layoutY="252.0" prefHeight="25.0" prefWidth="301.0" />
-      <Label layoutX="165.0" layoutY="164.0" text="*" textFill="#f20c0c" />
-      <Label layoutX="170.0" layoutY="209.0" text="*" textFill="#f20c0c" />
-      <Label layoutX="164.0" layoutY="256.0" text="*" textFill="#f20c0c" />
+      <PasswordField fx:id="senhaField" layoutX="206.0" layoutY="252.0" prefHeight="25.0" prefWidth="301.0" style="-fx-text-fill: #000000;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font></PasswordField>
+      <Label layoutX="186.0" layoutY="256.0" text="*" textFill="#f20c0c">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="191.0" layoutY="203.0" text="*" textFill="#f20c0c">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="189.0" layoutY="160.0" text="*" textFill="#f20c0c">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
