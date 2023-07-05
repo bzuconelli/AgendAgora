@@ -11,10 +11,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.event.ActionEvent;
+import javafx.scene.control.CheckBox;
 
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -52,7 +51,8 @@ public class ServicosController implements Initializable {
    @FXML
    Button whatsapp;
    @FXML
-    private Checkbox myCheckBox;
+   CheckBox servicosdodiacheck;
+
 
 
 
@@ -71,7 +71,7 @@ public class ServicosController implements Initializable {
         ServicosDAO servicosDAO= new ServicosDAO();
         try {
 
-            List<Servico> servicos = servicosDAO.getAll();
+            List<Servico> servicos = servicosDAO.getAll(false);
 
             tabelaServicos.getItems().addAll(servicos);
         } catch (SQLException e) {
@@ -80,6 +80,15 @@ public class ServicosController implements Initializable {
 
         }
     }
+    @FXML
+    public void servicosdodia() throws SQLException {
+        List<Servico> servicos = new ServicosDAO().getAll(servicosdodiacheck.isSelected());
+
+        tabelaServicos.getItems().clear();
+        tabelaServicos.getItems().addAll(servicos);
+    }
+
+
 
     @FXML
     public void novo() throws IOException, SQLException {
