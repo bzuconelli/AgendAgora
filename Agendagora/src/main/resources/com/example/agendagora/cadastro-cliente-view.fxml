@@ -8,29 +8,29 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroClienteController">
    <children>
-      <Label layoutX="129.0" layoutY="113.0" text="Código">
+      <Label layoutX="125.0" layoutY="109.0" text="Código">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="20.0" />
          </font></Label>
-      <Label layoutX="137.0" layoutY="159.0" text="Nome">
+      <Label layoutX="126.0" layoutY="156.0" text="Nome">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="20.0" />
          </font></Label>
-      <Label layoutX="109.0" layoutY="205.0" text="Endereço">
+      <Label layoutX="87.0" layoutY="205.0" text="Endereço">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="20.0" />
          </font></Label>
-      <Label layoutX="112.0" layoutY="253.0" text="Telefone">
+      <Label layoutX="93.0" layoutY="253.0" text="Telefone">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="20.0" />
          </font></Label>
       <Button layoutX="205.0" layoutY="337.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="205.0">
          <font>
-            <Font name="Bauhaus 93" size="20.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font></Button>
       <Button layoutX="327.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="152.0">
          <font>
-            <Font name="Bauhaus 93" size="20.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font></Button>
       <TextField fx:id="codigoField" disable="true" layoutX="205.0" layoutY="109.0" prefHeight="25.0" prefWidth="75.0" style="-fx-text-fill: #000000;">
          <font>
@@ -50,7 +50,7 @@
          </font></TextField>
       <Label layoutX="112.0" layoutY="49.0" text="CADASTRO DE CLIENTE">
          <font>
-            <Font name="Bauhaus 93" size="37.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="37.0" />
          </font>
       </Label>
       <Label layoutX="190.0" layoutY="158.0" text="*" textFill="#f20c0c">

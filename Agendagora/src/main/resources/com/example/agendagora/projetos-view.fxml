@@ -6,33 +6,23 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.ProjetoController">
    <center>
-      <AnchorPane prefHeight="600.0" prefWidth="533.0">
+      <AnchorPane prefHeight="600.0" prefWidth="533.0" style="-fx-background-color: #d9d9d9;">
          <children>
-            <TableView layoutY="4.0" prefHeight="514.0" prefWidth="709.0">
+            <TableView layoutY="-2.0" prefHeight="549.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;">
               <columns>
-                <TableColumn prefWidth="75.0" text="Codigo" />
-                <TableColumn prefWidth="240.0" text="Cliente" />
-                  <TableColumn prefWidth="113.0" text="Data" />
-                  <TableColumn prefWidth="173.0" text=" Tempo de Seviço " />
-                  <TableColumn prefWidth="107.0" text="Valor total" />
+                <TableColumn prefWidth="75.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Codigo" />
+                <TableColumn prefWidth="240.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Cliente" />
+                  <TableColumn prefWidth="113.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Data" />
+                  <TableColumn prefWidth="205.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text=" Tempo de Seviço " />
+                  <TableColumn prefWidth="166.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Valor total" />
               </columns>
             </TableView>
          </children>
       </AnchorPane>
    </center>
    <top>
-      <Pane prefHeight="51.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="22.0" prefWidth="802.0" style="-fx-background-color: #FFBD59;" BorderPane.alignment="CENTER" />
    </top>
-   <left>
-      <Pane prefHeight="502.0" prefWidth="49.0" BorderPane.alignment="CENTER" />
-   </left>
-   <right>
-      <Pane prefHeight="502.0" prefWidth="44.0" BorderPane.alignment="CENTER" />
-   </right>
-   <bottom>
-      <Pane prefHeight="34.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
-   </bottom>
 </BorderPane>
