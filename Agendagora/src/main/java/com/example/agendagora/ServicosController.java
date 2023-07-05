@@ -51,6 +51,8 @@ public class ServicosController implements Initializable {
    @FXML
    Button whatsapp;
    @FXML
+   Button finalizar;
+   @FXML
    CheckBox servicosdodiacheck;
 
 
@@ -87,8 +89,6 @@ public class ServicosController implements Initializable {
         tabelaServicos.getItems().clear();
         tabelaServicos.getItems().addAll(servicos);
     }
-
-
 
     @FXML
     public void novo() throws IOException, SQLException {
@@ -129,9 +129,27 @@ public class ServicosController implements Initializable {
             servicoselecionado.datadoservico= servicoeditado.datadoservico;
             servicoeditado.codigo=servicoselecionado.codigo;
             new ServicosDAO().update(servicoeditado);
-            tabelaServicos.refresh();
+
 
         }
+
+
+    }
+    @FXML
+    public void finalizaros() throws IOException, SQLException {
+        Servico servicoselecionado = tabelaServicos.getSelectionModel().getSelectedItem();
+        ServicoFinalizarController.finalizaros=servicoselecionado;
+        AgendaApplication.showModal("finalizaros-view");
+        Servico servicofinalizado = ServicoFinalizarController.finalizaros;
+        if (servicofinalizado != null){
+            servicoselecionado.valorfinal=servicofinalizado.valorfinal;
+            servicoselecionado.totaldehoras=servicofinalizado.totaldehoras;
+            servicoselecionado.valorhora=servicofinalizado.totaldehoras;
+            new ServicosDAO().finalizaros(servicoselecionado);
+            tabelaServicos.getItems().remove(servicoselecionado);
+        }
+
+
 
 
     }
@@ -153,6 +171,7 @@ public class ServicosController implements Initializable {
         cancelar.disableProperty().bind(algoSelecionado);
         editar.disableProperty().bind(algoSelecionado);
         whatsapp.disableProperty().bind(algoSelecionado);
+        finalizar.disableProperty().bind(algoSelecionado);
 
     }
 

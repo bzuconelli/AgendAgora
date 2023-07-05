@@ -102,8 +102,16 @@ public class ServicosDAO {
                 }
             }
         }
+    }
+    public void finalizaros(Servico servicoselecionado) throws SQLException {
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set estadodaordem = 'finalizada', hora = ?, valorhora = ?, valorfinal = ? where ordendeservicoid = ? ")){
+            preparedStatement.setDouble(1, servicoselecionado.totaldehoras);
+            preparedStatement.setDouble(2, servicoselecionado.valorhora);
+            preparedStatement.setDouble(3, servicoselecionado.valorfinal);
+            preparedStatement.setInt(4,servicoselecionado.codigo);
 
-
+            preparedStatement.execute();
+        }
     }
 
     public int dataatual() throws SQLException {

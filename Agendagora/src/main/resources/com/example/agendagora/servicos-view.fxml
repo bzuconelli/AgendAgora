@@ -53,7 +53,7 @@
                <effect>
                   <ImageInput>
                      <source>
-                        <Image url="file:/C:/Users/LAB%20INFO%20CEDUP%2012/Documents/GitHub/AgendAgora/Agendagora/src/main/resources/com/example/agendagora/5355501.png" />
+                        <Image url="@5355501.png" />
                      </source>
                   </ImageInput>
                </effect></Button>
@@ -61,7 +61,7 @@
             <Button fx:id="cancelar" disable="true" layoutX="233.0" layoutY="33.0" mnemonicParsing="false" onAction="#excluir" text="Cancelar" />
             <Button fx:id="editar" disable="true" layoutX="341.0" layoutY="33.0" mnemonicParsing="false" onAction="#editar" text="Alterar data  " />
             <Button fx:id="whatsapp" disable="true" layoutX="646.0" layoutY="33.0" mnemonicParsing="false" onAction="#whatsapp" text="Zapp" />
-            <Button layoutX="501.0" layoutY="33.0" mnemonicParsing="false" text="Serviços do dia" />
+            <Button fx:id="finalizar" disable="true" layoutX="501.0" layoutY="33.0" mnemonicParsing="false" onAction="#finalizaros" text="Finalizar Servico" />
          </children>
       </Pane>
    </bottom>

@@ -1,8 +1,6 @@
 package com.example.agendagora;
 
 import java.sql.Date;
-import java.sql.Time;
-import java.time.LocalDate;
 
 public class Servico {
     public Date datadoservico;
@@ -12,7 +10,7 @@ public class Servico {
     public String estadodoservico;
 
     public int codigo;
-    public Time hora;
+    public double totaldehoras;
     public double valorhora;
     public double valorfinal;
     public Usuario usuario;
@@ -50,12 +48,12 @@ public class Servico {
         this.codigo = codigo;
     }
 
-    public Time getHora() {
-        return hora;
+    public double getTotaldehoras() {
+        return totaldehoras;
     }
 
-    public void setHora(Time hora) {
-        this.hora = hora;
+    public void setTotaldehoras(double totaldehoras) {
+        this.totaldehoras = totaldehoras;
     }
 
     public double getValorhora() {

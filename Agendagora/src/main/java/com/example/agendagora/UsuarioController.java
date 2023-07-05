@@ -166,7 +166,7 @@ public class UsuarioController implements Initializable {
         Usuario usuarioselecionado = tabelaUsuario.getSelectionModel().getSelectedItem();
 
         UsuarioInfomacoesController.usuarioinfo = usuarioselecionado;
-        if (usuarioselecionado.codigo == UsuarioSigleton.usuarioteste.codigo) {
+        if (usuarioselecionado.codigo == UsuarioSigleton.usuarioteste.codigo ||UsuarioSigleton.usuarioteste.codigo==1) {
             AgendaApplication.showModal("informacoesusuario-view");
             Usuario usuarioeditado = UsuarioInfomacoesController.usuarioinfo;
             if (usuarioselecionado != null) {
