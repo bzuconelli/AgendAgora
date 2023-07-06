@@ -16,9 +16,9 @@
       <AnchorPane prefHeight="32.0" prefWidth="800.0" style="-fx-background-color: #FFBD59;" BorderPane.alignment="CENTER">
          <children>
 
-            <CheckBox fx:id="servicosdodiacheck" layoutX="49.0" layoutY="11.0" mnemonicParsing="false" onAction="#servicosdodia" prefHeight="30.0" prefWidth="243.0" text="Exibir Serviços do dia">
+            <CheckBox fx:id="servicosdodiacheck" layoutX="17.0" mnemonicParsing="false" onAction="#servicosdodia" prefHeight="30.0" prefWidth="243.0" text="Exibir Serviços do dia">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Black" size="14.0" />
                </font></CheckBox>
          </children></AnchorPane>
    </top>
@@ -39,8 +39,8 @@
                   <TableColumn fx:id="colunaCodigo" maxWidth="2000.0" prefWidth="86.0" style="-fx-font-size: 16PX;" text="Codigo" />
                 <TableColumn fx:id="colunaNome" maxWidth="4000.0" prefWidth="109.0" style="-fx-font-size: 16PX;" text="Cliente" />
                   <TableColumn fx:id="colunaEndreco" prefWidth="157.0" style="-fx-font-size: 16PX;" text="Endereço" />
-                  <TableColumn fx:id="colunaData" maxWidth="3000.0" prefWidth="79.0" style="-fx-font-size: 16PX;" text="Data" />
-                <TableColumn fx:id="colunaTelefone" prefWidth="133.0" style="-fx-font-size: 16PX;" text="Telefone" />
+                  <TableColumn fx:id="colunaData" maxWidth="4000.0" prefWidth="121.0" style="-fx-font-size: 16PX;" text="Data" />
+                <TableColumn fx:id="colunaTelefone" prefWidth="145.0" style="-fx-font-size: 16PX;" text="Telefone" />
                   <TableColumn fx:id="colunaTipodeservico" prefWidth="172.0" style="-fx-font-size: 16PX;" text="Tipo de Serviço" />
                </columns>
             </TableView>
@@ -57,11 +57,30 @@
                      </source>
                   </ImageInput>
                </effect></Button>
-            <Button layoutX="133.0" layoutY="33.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
-            <Button fx:id="cancelar" disable="true" layoutX="233.0" layoutY="33.0" mnemonicParsing="false" onAction="#excluir" text="Cancelar" />
-            <Button fx:id="editar" disable="true" layoutX="341.0" layoutY="33.0" mnemonicParsing="false" onAction="#editar" text="Alterar data  " />
-            <Button fx:id="whatsapp" disable="true" layoutX="646.0" layoutY="33.0" mnemonicParsing="false" onAction="#whatsapp" text="Zapp" />
-            <Button fx:id="finalizar" disable="true" layoutX="501.0" layoutY="33.0" mnemonicParsing="false" onAction="#finalizaros" text="Finalizar Servico" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="27.0" mnemonicParsing="false" onAction="#novo" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font></Button>
+            <Button fx:id="cancelar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="222.0" layoutY="27.0" mnemonicParsing="false" onAction="#excluir" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font></Button>
+            <Button fx:id="editar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="350.0" layoutY="27.0" mnemonicParsing="false" onAction="#editar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Alterar data  " textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font></Button>
+            <Button fx:id="whatsapp" disable="true" layoutX="721.0" layoutY="23.0" mnemonicParsing="false" onAction="#whatsapp" text="Zapp">
+               <effect>
+                  <ImageInput>
+                     <source>
+                        <Image url="@download-removebg-preview.png" />
+                     </source>
+                  </ImageInput>
+               </effect></Button>
+            <Button fx:id="finalizar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="516.0" layoutY="27.0" mnemonicParsing="false" onAction="#finalizaros" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Finalizar Serviço" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font></Button>
          </children>
       </Pane>
    </bottom>

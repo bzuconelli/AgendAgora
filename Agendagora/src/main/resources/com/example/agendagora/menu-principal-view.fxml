@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="199.0" fitWidth="1.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@AGENDAGORA__1_-removebg-preview.png" />
+                        <Image url="@AGENDAGORA__1_-removebg-preview (1).png" />
                      </image>
                   </ImageView>
                   <Button alignment="CENTER" layoutX="253.0" layoutY="54.0" mnemonicParsing="false" onAction="#abrirtelaconfiguracoes" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Usuário">
