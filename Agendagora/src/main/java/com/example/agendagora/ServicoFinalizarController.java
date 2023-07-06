@@ -3,6 +3,7 @@ package com.example.agendagora;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -21,8 +22,11 @@ public class ServicoFinalizarController implements Initializable {
     TextField valortotalField;
     @FXML
     TextField totaldehoras;
+    @FXML
+    Button Finalizar;
 
     public static Servico finalizaros;
+    double valortotal;
 
     @FXML
     public void salvar() {
@@ -33,7 +37,7 @@ public class ServicoFinalizarController implements Initializable {
             novoServico.cliente.nome = (nomeclienteField.getText());
             novoServico.valorhora =  Double.parseDouble(valorhoraField.getText());
             novoServico.totaldehoras =  Double.parseDouble(totaldehoras.getText());
-            novoServico.valorfinal =  Double.parseDouble(valortotalField.getText());
+            novoServico.valorfinal = valortotal;
             finalizaros=novoServico;
             AgendaApplication.closeCurrentWindow();
 
@@ -46,6 +50,16 @@ public class ServicoFinalizarController implements Initializable {
 
             alert.showAndWait();
         }
+    }
+    @FXML
+    public void calcular(){
+        valortotal = Double.parseDouble(valorhoraField.getText()) * Double.parseDouble(totaldehoras.getText());
+        valortotalField.setText(Double.toString(valortotal));
+        Finalizar.setDisable(false);
+
+
+
+
     }
 
 
@@ -61,9 +75,8 @@ public class ServicoFinalizarController implements Initializable {
             valorhoraField.setText(Double.toString(servicoselecionado.valorhora));
             valortotalField.setText(Double.toString(servicoselecionado.valorfinal));
 
-
-
         }
+        Finalizar.setDisable(true);
 
 
     }
