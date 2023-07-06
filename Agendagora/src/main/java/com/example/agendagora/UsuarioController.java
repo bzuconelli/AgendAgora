@@ -177,6 +177,7 @@ public class UsuarioController implements Initializable {
                 usuarioselecionado.cpfouCNPJ = usuarioeditado.cpfouCNPJ;
                 usuarioselecionado.ramodeatividade = usuarioeditado.ramodeatividade;
                 new UsuarioDAO().updateinfo(usuarioselecionado);
+                UsuarioSigleton.usuarioteste=usuarioselecionado;
                 tabelaUsuario.refresh();
 
 

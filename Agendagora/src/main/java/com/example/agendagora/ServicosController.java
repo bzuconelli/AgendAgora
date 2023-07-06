@@ -129,6 +129,7 @@ public class ServicosController implements Initializable {
             servicoselecionado.datadoservico= servicoeditado.datadoservico;
             servicoeditado.codigo=servicoselecionado.codigo;
             new ServicosDAO().update(servicoeditado);
+            tabelaServicos.refresh();
 
 
         }
@@ -141,7 +142,7 @@ public class ServicosController implements Initializable {
         ServicoFinalizarController.finalizaros=servicoselecionado;
         AgendaApplication.showModal("finalizaros-view");
         Servico servicofinalizado = ServicoFinalizarController.finalizaros;
-        if (servicofinalizado != null){
+        if (servicofinalizado.valorhora != 0.0 && servicofinalizado.totaldehoras !=0.0 && servicofinalizado.valorfinal!=0.0 ){
             servicoselecionado.valorfinal=servicofinalizado.valorfinal;
             servicoselecionado.totaldehoras=servicofinalizado.totaldehoras;
             servicoselecionado.valorhora=servicofinalizado.totaldehoras;

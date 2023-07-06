@@ -2,6 +2,7 @@ package com.example.agendagora;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 
 import java.net.URL;
@@ -13,7 +14,17 @@ public class AlteraDataServicoController implements Initializable {
     @FXML
     public void salvar() {
         Servico novoServico = new Servico();
-        novoServico.datadoservico = Date.valueOf(datadoservicoField.getValue());
+        if (!(datadoservicoField.getValue() ==null)) {
+            novoServico.datadoservico = Date.valueOf(datadoservicoField.getValue());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informações");
+            alert.setHeaderText(null);
+            alert.setContentText("O campo da data deve ser preenchido");
+
+            alert.showAndWait();
+        }
+
         if (datadoservicoField!=null){
             servico=novoServico;
             AgendaApplication.closeCurrentWindow();

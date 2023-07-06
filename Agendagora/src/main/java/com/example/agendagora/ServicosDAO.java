@@ -115,10 +115,9 @@ public class ServicosDAO {
     }
 
     public int dataatual() throws SQLException {
-        String sql = "select count(*) from ordendeservico where datadoservico = curdate()and estadodaordem = ? and usuario_usuarioid =?";
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate()and estadodaordem =  'aberto' and usuario_usuarioid =?";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
-            preparedStatement.setString(1, AgendaApplication.aberto);
-            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
                 int qtd;
@@ -138,10 +137,9 @@ public class ServicosDAO {
     }
 
     public int dataatual1() throws SQLException {
-        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 1 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 1 DAY and estadodaordem = 'aberto' and usuario_usuarioid = ? ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
-            preparedStatement.setString(1, AgendaApplication.aberto);
-            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
                 int qtd;
@@ -159,10 +157,9 @@ public class ServicosDAO {
     }
 
     public int dataatual2() throws SQLException {
-        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem =  'aberto' and usuario_usuarioid = ? ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
-            preparedStatement.setString(1, AgendaApplication.aberto);
-            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
                 int qtd;
@@ -179,10 +176,9 @@ public class ServicosDAO {
         }
     }
     public int dataatual3() throws SQLException {
-        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 3 DAY and estadodaordem =  'aberto' and usuario_usuarioid = ? ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
-            preparedStatement.setString(1, AgendaApplication.aberto);
-            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
                 int qtd;
@@ -199,10 +195,9 @@ public class ServicosDAO {
         }
     }
     public int dataatual4() throws SQLException {
-        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 2 DAY and estadodaordem = ? and usuario_usuarioid = ? ";
+        String sql = "select count(*) from ordendeservico where datadoservico = curdate() + INTERVAL 4 DAY and estadodaordem =  'aberto' and usuario_usuarioid = ? ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
-            preparedStatement.setString(1, AgendaApplication.aberto);
-            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
+            preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
                 int qtd;

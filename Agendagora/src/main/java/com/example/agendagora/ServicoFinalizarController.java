@@ -27,15 +27,13 @@ public class ServicoFinalizarController implements Initializable {
     @FXML
     public void salvar() {
         Servico novoServico = new Servico();
-        novoServico.codigo = Integer.parseInt(codigodaosField.getText());
-        novoServico.cliente= new Cliente();
-        novoServico.cliente.nome = (nomeclienteField.getText());
-        novoServico.valorhora = Double.parseDouble(valorhoraField.getText());
-        novoServico.totaldehoras = Double.parseDouble(totaldehoras.getText());
-        novoServico.valorfinal = Double.parseDouble(valortotalField.getText());
-
-
-        if (!valortotalField.getText().isBlank() && !totaldehoras.getText().isBlank() && !valorhoraField.getText().isBlank()) {
+        if (!valortotalField.getText().equals("0.0") && !valorhoraField.getText().equals("0.0")&& !totaldehoras.getText().equals("0.0")){
+            novoServico.codigo = Integer.parseInt(codigodaosField.getText());
+            novoServico.cliente= new Cliente();
+            novoServico.cliente.nome = (nomeclienteField.getText());
+            novoServico.valorhora =  Double.parseDouble(valorhoraField.getText());
+            novoServico.totaldehoras =  Double.parseDouble(totaldehoras.getText());
+            novoServico.valorfinal =  Double.parseDouble(valortotalField.getText());
             finalizaros=novoServico;
             AgendaApplication.closeCurrentWindow();
 
@@ -44,11 +42,13 @@ public class ServicoFinalizarController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos");
+            alert.setContentText("Os campos com '*' devem ser preenchidos com valor maior que 0");
 
             alert.showAndWait();
         }
     }
+
+
 
 
     @Override
@@ -57,6 +57,11 @@ public class ServicoFinalizarController implements Initializable {
         if (servicoselecionado != null) {
             codigodaosField.setText(Integer.toString(servicoselecionado.codigo));
             nomeclienteField.setText(servicoselecionado.cliente.nome);
+            totaldehoras.setText(Double.toString(servicoselecionado.totaldehoras));
+            valorhoraField.setText(Double.toString(servicoselecionado.valorhora));
+            valortotalField.setText(Double.toString(servicoselecionado.valorfinal));
+
+
 
         }
 
