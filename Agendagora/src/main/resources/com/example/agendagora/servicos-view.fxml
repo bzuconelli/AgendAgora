@@ -47,41 +47,51 @@
          </children></AnchorPane>
    </center>
    <bottom>
-      <Pane prefHeight="91.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
+      <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="13.0" layoutY="25.0" mnemonicParsing="false" onAction="#voltar" text="Voltar">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="@5355501.png" />
-                     </source>
-                  </ImageInput>
-               </effect></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="27.0" mnemonicParsing="false" onAction="#novo" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo" textAlignment="CENTER">
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
-               </font></Button>
-            <Button fx:id="cancelar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="222.0" layoutY="27.0" mnemonicParsing="false" onAction="#excluir" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" textAlignment="CENTER">
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
-               </font></Button>
-            <Button fx:id="editar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="350.0" layoutY="27.0" mnemonicParsing="false" onAction="#editar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Alterar data  " textAlignment="CENTER">
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
-               </font></Button>
-            <Button fx:id="whatsapp" disable="true" layoutX="721.0" layoutY="23.0" mnemonicParsing="false" onAction="#whatsapp" text="Zapp">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="@download-removebg-preview.png" />
-                     </source>
-                  </ImageInput>
-               </effect></Button>
-            <Button fx:id="finalizar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="516.0" layoutY="27.0" mnemonicParsing="false" onAction="#finalizaros" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Finalizar Serviço" textAlignment="CENTER">
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
-               </font></Button>
+            <Pane prefHeight="91.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button layoutX="13.0" layoutY="25.0" mnemonicParsing="false" onAction="#voltar" text="Voltar">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="@5355501.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="27.0" mnemonicParsing="false" onAction="#novo" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancelar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="189.0" layoutY="27.0" mnemonicParsing="false" onAction="#excluir" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="editar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="327.0" layoutY="27.0" mnemonicParsing="false" onAction="#editar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Alterar data  " textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="whatsapp" disable="true" layoutX="732.0" layoutY="23.0" mnemonicParsing="false" onAction="#whatsapp" text="Zapp">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="@download-removebg-preview.png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </Button>
+                  <Button fx:id="finalizar" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="513.0" layoutY="27.0" mnemonicParsing="false" onAction="#finalizaros" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Finalizar Serviço" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
-      </Pane>
+      </AnchorPane>
    </bottom>
 </BorderPane>

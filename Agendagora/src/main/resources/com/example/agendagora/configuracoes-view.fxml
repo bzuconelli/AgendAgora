@@ -50,21 +50,21 @@
                   </ImageInput>
                </effect>
             </Button>
-            <Button alignment="CENTER" layoutX="75.0" layoutY="42.0" mnemonicParsing="false" onAction="#novo" prefHeight="45.0" prefWidth="124.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo Usuário">
+            <Button alignment="CENTER" layoutX="75.0" layoutY="42.0" mnemonicParsing="false" onAction="#novo" prefHeight="45.0" prefWidth="142.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo Usuário">
                <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                  <Font name="Arial Black" size="16.0" />
                </font></Button>
-            <Button fx:id="loginesenha" alignment="CENTER" disable="true" layoutX="222.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarloginousenha" prefHeight="45.0" prefWidth="217.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Altera Login ou Senha">
+            <Button fx:id="loginesenha" alignment="CENTER" disable="true" layoutX="236.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarloginousenha" prefHeight="45.0" prefWidth="217.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Altera Login ou Senha">
                <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                  <Font name="Arial Black" size="16.0" />
                </font></Button>
-            <Button fx:id="excluir" alignment="CENTER" disable="true" layoutX="464.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluir" prefHeight="45.0" prefWidth="112.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Excluir ">
+            <Button fx:id="excluir" alignment="CENTER" disable="true" layoutX="474.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluir" prefHeight="45.0" prefWidth="112.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Excluir ">
                <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                  <Font name="Arial Black" size="16.0" />
                </font></Button>
-            <Button fx:id="informacoes" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="597.0" layoutY="41.0" mnemonicParsing="false" onAction="#editarinformacoes" prefHeight="45.0" prefWidth="177.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Outras Informações ">
+            <Button fx:id="informacoes" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="605.0" layoutY="41.0" mnemonicParsing="false" onAction="#editarinformacoes" prefHeight="45.0" prefWidth="177.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Editar Usuário">
                <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                  <Font name="Arial Black" size="16.0" />
                </font></Button>
          </children>
       </Pane>

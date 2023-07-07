@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -57,9 +58,10 @@ public class ServicoFinalizarController implements Initializable {
         valortotalField.setText(Double.toString(valortotal));
         Finalizar.setDisable(false);
 
-
-
-
+    }
+    @FXML
+    public void voltar() throws IOException {
+        AgendaApplication.closeCurrentWindow();
     }
 
 
