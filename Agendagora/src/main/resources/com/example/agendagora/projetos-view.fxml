@@ -20,7 +20,7 @@
                 <TableColumn fx:id="colunaCodigo" prefWidth="75.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Código" />
                 <TableColumn fx:id="colunaNome" prefWidth="182.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Cliente" />
                   <TableColumn fx:id="colunaData" prefWidth="171.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Data" />
-                  <TableColumn fx:id="colunaTempodoservico" prefWidth="205.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text=" Tempo de Seviço " />
+                  <TableColumn fx:id="colunaTempodoservico" prefWidth="205.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text=" Tempo de Serviço " />
                   <TableColumn fx:id="colunaValortotal" prefWidth="166.0" style="-fx-text-fill: #000000; -fx-font-size: 16PX;" text="Valor total" />
               </columns>
             </TableView>
@@ -30,12 +30,12 @@
    <top>
       <Pane prefHeight="38.0" prefWidth="800.0" style="-fx-background-color: #FFBD59;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="26.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Pesquisa por Telefone">
+            <TextField fx:id="telefoneField" layoutX="26.0" layoutY="6.0" onAction="#Pesqisar" prefHeight="25.0" prefWidth="188.0" promptText="Pesquisa por Telefone">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
             </TextField>
-            <Button layoutX="230.0" layoutY="7.0" mnemonicParsing="false" text="Pesquisar">
+            <Button layoutX="230.0" layoutY="7.0" mnemonicParsing="false" onAction="#Pesqisar" text="Pesquisar">
                <effect>
                   <ImageInput>
                      <source>

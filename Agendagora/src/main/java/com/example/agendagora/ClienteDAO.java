@@ -91,8 +91,6 @@ public class ClienteDAO {
             try (ResultSet resultado = preparedStatement.executeQuery()) {
                 resultado.next();
                 Cliente cliente = new Cliente();
-
-
                 cliente.codigo = resultado.getInt(1);
                 cliente.nome = resultado.getString(2);
                 cliente.endereco = resultado.getString(3);

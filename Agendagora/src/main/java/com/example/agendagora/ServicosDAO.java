@@ -213,6 +213,28 @@ public class ServicosDAO {
             }
         }
     }
+    public List<Servico>historicodeservico(Cliente cliente) throws SQLException{
+        String sql = "select os.ordendeservicoid,c.nomecliente,os.datadoservico,os.hora,os.valorfinal from ordendeservico as os inner join cliente as c on os.cliente_clienteid= c.clienteid where c.clienteid= ? and os.estadodaordem ='finalizada'";
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setInt(1, cliente.codigo);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                List<Servico> historicoservicos = new ArrayList<>();
+                while (rs.next()) {
+                    Servico historicodeservico = new Servico();
+                    historicodeservico.codigo = rs.getInt(1);
+                    historicodeservico.cliente = new Cliente();
+                    historicodeservico.cliente.nome = rs.getString(2);
+                    historicodeservico.datadoservico = rs.getDate(3);
+                    historicodeservico.totaldehoras = rs.getDouble(4);
+                    historicodeservico.valorfinal = rs.getDouble(5);
+
+                    historicoservicos.add(historicodeservico);
+                }
+                return historicoservicos;
+            }
+
+        }
+    }
 
 }
 
