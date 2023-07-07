@@ -1,27 +1,52 @@
 package com.example.agendagora;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ProjetoController {
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class ProjetoController implements Initializable {
     @FXML
     TableView<Servico> tabelaservicos;
 
     @FXML
-    TableColumn<Cliente, Integer> colunaCodigo;
+    TableColumn<Servico, String> colunaCodigo;
 
     @FXML
-    TableColumn<Cliente, String> colunaNome;
+    TableColumn<Servico, String> colunaNome;
 
     @FXML
-    TableColumn<Cliente, String> colunaEndereco;
+    TableColumn<Servico, Date> colunaData;
+    @FXML
+    TableColumn<Servico, Double> colunaTempodoservico;
+    @FXML
+    TableColumn<Servico, Double> colunaValortotal;
+
+    Cliente clientepequisado;
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        colunaCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        colunaNome.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getNome()));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("datadoservico"));
+
+
+    }
 
     @FXML
-    TableColumn<Cliente, String> colunaTelefone;
+    public void Pesqisar() throws SQLException {
+        Cliente pesquisacliente = new Cliente();
+
+//        if (!telefoneField.getText().isBlank() && telefoneField!= null){
 
 
-
-
-
+//}
+    }
 }
