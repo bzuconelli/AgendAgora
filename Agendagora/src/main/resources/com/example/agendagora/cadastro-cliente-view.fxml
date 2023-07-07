@@ -26,27 +26,27 @@
          </font></Label>
       <Button layoutX="205.0" layoutY="337.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="205.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></Button>
       <Button layoutX="327.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="152.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></Button>
       <TextField fx:id="codigoField" disable="true" layoutX="205.0" layoutY="109.0" prefHeight="25.0" prefWidth="75.0" style="-fx-text-fill: #000000;">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="nomeField" layoutX="205.0" layoutY="155.0" prefHeight="25.0" prefWidth="301.0" style="-fx-text-fill: #000000;">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="enderecoField" layoutX="205.0" layoutY="205.0" prefHeight="25.0" prefWidth="301.0" style="-fx-text-fill: #000000;">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="telefoneField" layoutX="205.0" layoutY="252.0" prefHeight="25.0" prefWidth="130.0" style="-fx-text-fill: #000000;">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <Label layoutX="112.0" layoutY="49.0" text="CADASTRO DE CLIENTE">
          <font>

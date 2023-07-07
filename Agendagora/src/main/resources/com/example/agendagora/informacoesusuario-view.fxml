@@ -26,23 +26,23 @@
          </font></Label>
       <Button layoutX="205.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="20.0" />
          </font></Button>
       <Button layoutX="327.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="20.0" />
          </font></Button>
       <TextField fx:id="telefoneField" layoutX="237.0" layoutY="140.0" prefHeight="25.0" prefWidth="158.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="237.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="enderecoField" layoutX="237.0" layoutY="187.0" prefHeight="25.0" prefWidth="301.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="237.0">
          <font>
-            <Font name="Berlin Sans FB" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="CPFouCPJField" layoutX="237.0" layoutY="235.0" prefHeight="25.0" prefWidth="158.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="237.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <Label layoutX="70.0" layoutY="29.0" text="INFORMAÇÕES DO USUÁRIO">
          <font>
@@ -55,11 +55,11 @@
          </font></Label>
       <TextField fx:id="qtdvagasField" layoutX="343.0" layoutY="103.0" prefHeight="25.0" prefWidth="75.0" style="-fx-text-fill: #000000;">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="ramodeatividadeField" layoutX="237.0" layoutY="279.0" prefHeight="25.0" prefWidth="266.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="237.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <Label layoutX="225.0" layoutY="282.0" text="*" textFill="#f50606">
          <font>

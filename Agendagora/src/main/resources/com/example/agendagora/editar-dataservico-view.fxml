@@ -8,13 +8,13 @@
 <AnchorPane prefHeight="115.0" prefWidth="291.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.AlteraDataServicoController">
    <children>
       <DatePicker fx:id="datadoservicoField" layoutX="11.0" layoutY="16.0" prefHeight="25.0" prefWidth="273.0" style="-fx-font-family: Berlin Sans FB Demi Bold; -fx-font-size: 16px;" />
-      <Button layoutX="41.0" layoutY="77.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar">
+      <Button layoutX="41.0" layoutY="70.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></Button>
-      <Button layoutX="150.0" layoutY="77.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar">
+      <Button layoutX="150.0" layoutY="70.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></Button>
    </children>
 </AnchorPane>

@@ -13,11 +13,11 @@
    <children>
       <Button layoutX="196.0" layoutY="396.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Salvar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="205.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></Button>
       <Button layoutX="338.0" layoutY="396.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="152.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></Button>
       <Label layoutX="146.0" layoutY="34.0" text="AGENDAR SERVIÇO">
          <font>
@@ -26,7 +26,7 @@
       </Label>
       <TextField fx:id="telefoneField" layoutX="194.0" layoutY="119.0" onAction="#Pesqisar" prefHeight="29.0" prefWidth="177.0" AnchorPane.leftAnchor="194.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <Button layoutX="433.0" layoutY="118.0" mnemonicParsing="false" onAction="#Pesqisar" prefHeight="16.0" prefWidth="46.0" style="-fx-background-color: #FFBD59;" text="Pesquisa">
          <effect>
@@ -38,11 +38,11 @@
          </effect></Button>
       <TextField fx:id="nomeField" disable="true" editable="false" layoutX="194.0" layoutY="164.0" prefHeight="25.0" prefWidth="373.0" AnchorPane.leftAnchor="194.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <TextField fx:id="enderecoField" disable="true" editable="false" layoutX="194.0" layoutY="212.0" prefHeight="25.0" prefWidth="373.0" AnchorPane.leftAnchor="194.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <Label layoutX="115.0" layoutY="163.0" text="Nome">
          <font>
@@ -56,14 +56,14 @@
          <font>
             <Font name="Arial Black" size="20.0" />
          </font></Label>
-      <DatePicker fx:id="datadoservicoField" layoutX="194.0" layoutY="315.0" prefHeight="35.0" prefWidth="177.0" style="-fx-font-size: 16px; -fx-font-family: Berlin Sans FB Demi Bold" AnchorPane.leftAnchor="194.0" />
+      <DatePicker fx:id="datadoservicoField" layoutX="194.0" layoutY="315.0" prefHeight="35.0" prefWidth="177.0" style="-fx-font-size: 16px; -fx-font-family: Arial Black;" AnchorPane.leftAnchor="194.0" />
       <Label layoutX="129.0" layoutY="318.0" text="Data">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font></Label>
       <TextField fx:id="tipodeservicoField" layoutX="194.0" layoutY="263.0" prefHeight="25.0" prefWidth="356.0" AnchorPane.leftAnchor="194.0">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+            <Font name="Arial Black" size="16.0" />
          </font></TextField>
       <Label layoutX="17.0" layoutY="263.0" text="Tipo de serviço">
          <font>

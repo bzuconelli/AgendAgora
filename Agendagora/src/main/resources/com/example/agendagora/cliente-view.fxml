@@ -28,11 +28,11 @@
                <children>
                   <Button layoutX="185.0" layoutY="14.0" mnemonicParsing="false" onAction="#novo" prefHeight="38.0" prefWidth="79.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+                        <Font name="Arial Black" size="16.0" />
                      </font></Button>
                   <Button fx:id="editar" disable="true" layoutX="527.0" layoutY="15.0" mnemonicParsing="false" onAction="#editar" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Editar">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+                        <Font name="Arial Black" size="16.0" />
                      </font></Button>
                   <Button layoutX="50.0" layoutY="10.0" mnemonicParsing="false" onAction="#voltar" prefHeight="28.0" prefWidth="35.0" text="Voltar">
                      <cursor>
@@ -48,7 +48,7 @@
                   </Button>
                   <Button fx:id="excluir" disable="true" layoutX="348.0" layoutY="15.0" mnemonicParsing="false" onAction="#excluir" prefHeight="38.0" prefWidth="92.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Excluir">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+                        <Font name="Arial Black" size="16.0" />
                      </font></Button>
                </children>
             </Pane>
