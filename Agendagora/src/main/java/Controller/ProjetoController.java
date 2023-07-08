@@ -1,21 +1,22 @@
-package com.example.agendagora;
+package Controller;
 
+import Model.Cliente;
+import Model.ClienteDAO;
+import Model.Servico;
+import Model.ServicosDAO;
+import com.example.agendagora.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javax.swing.border.EmptyBorder;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class ProjetoController  {
     @FXML

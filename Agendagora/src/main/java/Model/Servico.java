@@ -1,4 +1,4 @@
-package com.example.agendagora;
+package Model;
 
 import java.sql.Date;
 

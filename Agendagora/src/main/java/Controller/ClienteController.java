@@ -1,5 +1,8 @@
-package com.example.agendagora;
+package Controller;
 
+import com.example.agendagora.AgendaApplication;
+import Model.Cliente;
+import Model.ClienteDAO;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,14 +11,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
 

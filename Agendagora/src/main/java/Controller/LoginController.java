@@ -1,5 +1,9 @@
-package com.example.agendagora;
+package Controller;
 
+import com.example.agendagora.AgendaApplication;
+import Model.Usuario;
+import Model.UsuarioDAO;
+import Model.UsuarioSigleton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;

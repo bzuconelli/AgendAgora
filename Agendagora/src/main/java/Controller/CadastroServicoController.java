@@ -1,5 +1,10 @@
-package com.example.agendagora;
+package Controller;
 
+import Model.Cliente;
+import Model.ClienteDAO;
+import Model.Servico;
+import Model.ServicosDAO;
+import com.example.agendagora.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

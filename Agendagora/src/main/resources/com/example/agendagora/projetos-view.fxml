@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="649.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.ProjetoController">
+<BorderPane prefHeight="649.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProjetoController">
    <center>
-      <AnchorPane prefHeight="528.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;">
+      <AnchorPane prefHeight="456.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;">
          <children>
             <TableView fx:id="tabelaservicos" layoutY="-2.0" prefHeight="527.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;">
               <columns>
@@ -48,9 +48,9 @@
       </Pane>
    </top>
    <bottom>
-      <AnchorPane prefHeight="43.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="26.0" layoutY="-6.0" mnemonicParsing="false" onAction="#voltar" text="Pesquisar">
+            <Button layoutX="26.0" layoutY="-7.0" mnemonicParsing="false" onAction="#voltar" text="Pesquisar">
                <effect>
                   <ImageInput>
                      <source>

@@ -10,4 +10,8 @@ module com.example.agendagora {
 
     opens com.example.agendagora to javafx.fxml;
     exports com.example.agendagora;
+    exports Controller;
+    opens Controller to javafx.fxml;
+    exports Model;
+    opens Model to javafx.fxml;
 }

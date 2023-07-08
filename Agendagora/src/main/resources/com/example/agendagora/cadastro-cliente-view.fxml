@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agendagora.CadastroClienteController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CadastroClienteController">
    <children>
       <Label layoutX="125.0" layoutY="109.0" text="Código">
          <font>

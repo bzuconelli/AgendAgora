@@ -1,8 +1,4 @@
-package com.example.agendagora;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+package Model;
 
 public class UsuarioSigleton {
     public static Usuario usuarioteste ;

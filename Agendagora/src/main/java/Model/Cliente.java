@@ -1,4 +1,4 @@
-package com.example.agendagora;
+package Model;
 
 public class Cliente {
         public int codigo;

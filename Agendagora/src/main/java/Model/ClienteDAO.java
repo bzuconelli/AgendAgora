@@ -1,4 +1,6 @@
-package com.example.agendagora;
+package Model;
+
+import com.example.agendagora.ConnectionSigleton;
 
 import java.sql.*;
 import java.util.ArrayList;

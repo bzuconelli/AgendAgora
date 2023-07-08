@@ -1,5 +1,7 @@
-package com.example.agendagora;
+package Controller;
 
+import com.example.agendagora.AgendaApplication;
+import Model.Cliente;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

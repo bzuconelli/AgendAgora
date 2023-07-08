@@ -1,8 +1,10 @@
-package com.example.agendagora;
+package Controller;
 
+import Model.Servico;
+import Model.ServicosDAO;
+import com.example.agendagora.*;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

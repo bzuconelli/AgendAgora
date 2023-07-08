@@ -1,5 +1,9 @@
-package com.example.agendagora;
+package Controller;
 
+import Model.Usuario;
+import Model.UsuarioDAO;
+import Model.UsuarioSigleton;
+import com.example.agendagora.*;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -81,7 +85,7 @@ public class UsuarioController implements Initializable {
     @FXML
     public void excluir() throws SQLException, IOException {
         Usuario usuarioselecionado = tabelaUsuario.getSelectionModel().getSelectedItem();
-        if(usuarioselecionado.codigo ==UsuarioSigleton.usuarioteste.codigo) {
+        if(usuarioselecionado.codigo == UsuarioSigleton.usuarioteste.codigo) {
             boolean existeoutrousuario= new UsuarioDAO().qtdusuarios();
             if (existeoutrousuario) {
 
