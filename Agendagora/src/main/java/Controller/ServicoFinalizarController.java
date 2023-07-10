@@ -57,9 +57,15 @@ public class ServicoFinalizarController implements Initializable {
     }
     @FXML
     public void calcular(){
-        valortotal = Double.parseDouble(valorhoraField.getText()) * Double.parseDouble(totaldehoras.getText());
-        valortotalField.setText(Double.toString(valortotal));
-        Finalizar.setDisable(false);
+        if (valorhoraField.getText().matches("\\d+\\.?\\d*")) {
+            valortotal = Double.parseDouble(valorhoraField.getText()) * Double.parseDouble(totaldehoras.getText());
+            valortotalField.setText(Double.toString(valortotal));
+            Finalizar.setDisable(false);
+        } Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Informações");
+        alert.setHeaderText(null);
+        alert.setContentText(" O Valor da hora deve ser informado no formato(99.99)");
+        alert.showAndWait();
 
     }
     @FXML
@@ -82,6 +88,13 @@ public class ServicoFinalizarController implements Initializable {
 
         }
         Finalizar.setDisable(true);
+        valorhoraField.textProperty().addListener((o,oldValue, newValue)->{
+            valorhoraField.setText(newValue.replaceAll("[^\\d.]",""));
+        });
+        totaldehoras.textProperty().addListener((o,oldValue, newValue)->{
+            totaldehoras.setText(newValue.replaceAll("[^\\d.]",""));
+        });
+
 
 
     }

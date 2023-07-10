@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Cliente;
-import Model.ClienteDAO;
-import Model.Servico;
-import Model.ServicosDAO;
+import Model.*;
 import com.example.agendagora.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -55,8 +52,9 @@ public class CadastroServicoController implements Initializable {
         }
 
         if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank() &&  !tipodeservicoField.getText().isBlank() && datadoservicoField.getValue()!=null){
-            boolean temvaga = new ServicosDAO().qtdvagaspordia(novoServico);
-            if(temvaga) {
+
+            boolean tenvaga = new ServicosDAO().qtdvagaspordia(novoServico);
+            if(tenvaga && UsuarioSigleton.usuarioteste.qtdvagas>0) {
                 servico = novoServico;
                 AgendaApplication.closeCurrentWindow();
             }else {
@@ -90,11 +88,20 @@ public class CadastroServicoController implements Initializable {
 
             boolean clienteexiste = new ClienteDAO().clienteexiste(pesquisacliente);
             if (clienteexiste){
-                Cliente clientestacadastrado= new ClienteDAO().clientecadastrado(pesquisacliente);
+                if(telefoneField.getText().matches("^\\(?[1-9]{2}\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$")) {
+                    Cliente clientestacadastrado = new ClienteDAO().clientecadastrado(pesquisacliente);
 
-                nomeField.setText(clientestacadastrado.nome);
-                enderecoField.setText(clientestacadastrado.endereco);
-                clientepequisado=clientestacadastrado;
+                    nomeField.setText(clientestacadastrado.nome);
+                    enderecoField.setText(clientestacadastrado.endereco);
+                    clientepequisado = clientestacadastrado;
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Informações");
+                    alert.setHeaderText(null);
+                    alert.setContentText("O campo telefone deve ser prenchido no formato(DD)xxxxxxxxx" );
+
+                    alert.showAndWait();
+                }
 
            }else{
                Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -123,11 +130,11 @@ public class CadastroServicoController implements Initializable {
             telefoneField.setText(servicoselecionado.cliente.telefone);
             tipodeservicoField.setText(servicoselecionado.tipodoservico);
             datadoservicoField.setValue(servicoselecionado.datadoservico.toLocalDate());
-
-
-
-
-
         }
+        tipodeservicoField.textProperty().addListener((o,oldValue, newValue)->{
+            tipodeservicoField.setText(newValue.replaceAll("(\\d+)|",""));
+
+        });
+
     }
 }

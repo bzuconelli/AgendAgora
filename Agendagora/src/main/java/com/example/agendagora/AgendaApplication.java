@@ -4,17 +4,18 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class AgendaApplication extends Application {
     private static Scene scene;
     private static Stage modalDialog;
-    public static String aberto="Aberto";
-    public static int ativookv=1;
+
 
 
 
@@ -25,7 +26,11 @@ public class AgendaApplication extends Application {
         stage.setTitle("AgendAgora!");
         stage.setScene(scene);
         //stage.setMaximized(true);
+
         stage.show();
+        stage.setResizable(false);
+
+
     }
 
     /**
@@ -44,6 +49,7 @@ public class AgendaApplication extends Application {
         modalDialog.initOwner(primaryStage);
         modalDialog.setScene(scene);
         modalDialog.showAndWait();
+
     }
 
     public static void main(String[] args) {

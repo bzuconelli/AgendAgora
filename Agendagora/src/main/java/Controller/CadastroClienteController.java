@@ -26,7 +26,7 @@ public class CadastroClienteController implements Initializable {
     TextField telefoneField;
 
     public static Cliente cliente;
-//^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$
+
     @FXML
     public void salvar() {
 
@@ -38,9 +38,20 @@ public class CadastroClienteController implements Initializable {
         novoCliente.nome = nomeField.getText();
         novoCliente.endereco = enderecoField.getText();
         novoCliente.telefone = telefoneField.getText();
+
         if(!nomeField.getText().isBlank() &&!enderecoField.getText().isBlank() && !telefoneField.getText().isBlank()){
-            cliente = novoCliente;
-            AgendaApplication.closeCurrentWindow();
+            if(telefoneField.getText().matches("^\\(?[1-9]{2}\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$")) {
+                cliente = novoCliente;
+                AgendaApplication.closeCurrentWindow();
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informações");
+                alert.setHeaderText(null);
+                alert.setContentText("O campo telefone deve ser prenchido no formato(DD)xxxxxxxxx" );
+
+                alert.showAndWait();
+
+            }
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Informações");
@@ -69,6 +80,12 @@ public class CadastroClienteController implements Initializable {
             telefoneField.setText(clienteselecionado.telefone);
 
         }
+        nomeField.textProperty().addListener((o,oldValue, newValue)->{
+            nomeField.setText(newValue.replaceAll("(\\d+)|",""));
+
+        });
+
+
     }
 }
 

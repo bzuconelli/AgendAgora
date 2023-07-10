@@ -37,16 +37,26 @@ public class UsuarioInfomacoesController implements Initializable {
 
         Usuario novoUsuario = new Usuario();
 
-
-        novoUsuario.qtdvagas = Integer.parseInt(qtdvagasField.getText());
+        if (!qtdvagasField.getText().isBlank()) {
+            novoUsuario.qtdvagas = Integer.parseInt(qtdvagasField.getText());
+        }
         novoUsuario.telefone = telefoneField.getText();
         novoUsuario.endereco = enderecoField.getText();
         novoUsuario.cpfouCNPJ = CPFouCPJField.getText();
         novoUsuario.ramodeatividade=ramodeatividadeField.getText();
 
-        if ( !isEmpty(telefoneField) && !isEmpty(enderecoField) && !isEmpty(CPFouCPJField) && !isEmpty(ramodeatividadeField)&& !isEmpty(qtdvagasField) &&!qtdvagasField.getText().equals("0")) {
-            usuarioinfo = novoUsuario;
-            AgendaApplication.closeCurrentWindow();
+        if ( !isEmpty(telefoneField) && !isEmpty(enderecoField) && !isEmpty(CPFouCPJField) && !isEmpty(ramodeatividadeField)&& !isEmpty(qtdvagasField) &&!qtdvagasField.getText().equals("0") && !isEmpty(qtdvagasField)) {
+            if (telefoneField.getText().matches("^\\(?[1-9]{2}\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$")) {
+                usuarioinfo = novoUsuario;
+                AgendaApplication.closeCurrentWindow();
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informações");
+                alert.setHeaderText(null);
+                alert.setContentText("O campo telefone deve ser prenchido no formato(DD)xxxxxxxxx" );
+
+                alert.showAndWait();
+            }
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Informações");
@@ -79,9 +89,17 @@ public class UsuarioInfomacoesController implements Initializable {
         }
         if (qtdvagasField.getText().equals("0")){
             qtdvasgas.setText("A quantidade de atendimentos deve ser mairo que 0");
-
-
         }
+        ramodeatividadeField.textProperty().addListener((o, oldValue, newValue) -> {
+            ramodeatividadeField.setText(newValue.replaceAll("(\\d+)|", ""));
+        });
+        CPFouCPJField.textProperty().addListener((o,oldValue, newValue)->{
+            CPFouCPJField.setText(newValue.replaceAll("[^\\d.]",""));
+        });
+        qtdvagasField.textProperty().addListener((o,oldValue, newValue)->{
+            qtdvagasField.setText(newValue.replaceAll("[^\\d.]",""));
+        });
+
     }
 }
 

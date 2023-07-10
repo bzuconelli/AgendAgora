@@ -73,6 +73,9 @@ public class CadastroUsuarioController implements Initializable {
             usuarioField.setText(usuarioselecionado.usuario);
 
         }
+        nomeField.textProperty().addListener((o, oldValue, newValue) -> {
+            nomeField.setText(newValue.replaceAll("(\\d+)|", ""));
+        });
     }
 }
 

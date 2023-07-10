@@ -89,11 +89,10 @@ public class ServicosDAO {
     }
 
     public boolean qtdvagaspordia(Servico servico) throws SQLException {
-        String sql = "select count(*) from ordendeservico where datadoservico = ? and estadodaordem = ? and usuario_usuarioid =?";
+        String sql = "select count(*) from ordendeservico where datadoservico = ? and estadodaordem = 'aberto' and usuario_usuarioid =?";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setDate(1, servico.datadoservico);
-            preparedStatement.setString(2, AgendaApplication.aberto);
-            preparedStatement.setInt(3, UsuarioSigleton.usuarioteste.codigo);
+            preparedStatement.setInt(2, UsuarioSigleton.usuarioteste.codigo);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
                 int qtd;

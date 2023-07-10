@@ -50,7 +50,7 @@
                   </ImageInput>
                </effect>
             </Button>
-            <Button alignment="CENTER" layoutX="75.0" layoutY="42.0" mnemonicParsing="false" onAction="#novo" prefHeight="45.0" prefWidth="142.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo Usuário">
+            <Button fx:id="novo" alignment="CENTER" layoutX="75.0" layoutY="42.0" mnemonicParsing="false" onAction="#novo" prefHeight="45.0" prefWidth="142.0" style="-fx-background-color: #FFBD59; -fx-text-fill: #000000;" text="Novo Usuário">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font></Button>

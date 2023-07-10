@@ -122,7 +122,7 @@ public class ServicosController implements Initializable {
         }
     }
     @FXML
-    public void editar() throws IOException, SQLException {
+    public void alterardata() throws IOException, SQLException {
         Servico servicoselecionado = tabelaServicos.getSelectionModel().getSelectedItem();
         AlteraDataServicoController.servico = servicoselecionado;
         AgendaApplication.showModal("editar-dataservico-view");
@@ -164,7 +164,9 @@ public class ServicosController implements Initializable {
     @FXML
     public void whatsapp ()throws URISyntaxException, IOException {
         Servico servicotelefone =tabelaServicos.getSelectionModel().getSelectedItem();
-        URI link = new URI("https://wa.me/5547"+servicotelefone.cliente.telefone  );
+        String telefone= servicotelefone.cliente.telefone.replace("(","");
+        String telefonecorreto= telefone.replace(")","");
+        URI link = new URI("https://wa.me/55"+telefonecorreto);
         Desktop.getDesktop().browse(link);
     }
 

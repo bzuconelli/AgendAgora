@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.UsuarioSigleton;
 import com.example.agendagora.AgendaApplication;
 import Model.Cliente;
 import Model.ClienteDAO;
@@ -61,6 +62,11 @@ public class ClienteController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        if(UsuarioSigleton.usuarioteste.codigo==1){
+            excluir.setVisible(true);
+        }else{
+            excluir.setVisible(false);
+        }
     }
 //      Cadastrar um cliente
     public void novo() throws IOException, SQLException {
@@ -70,44 +76,58 @@ public class ClienteController implements Initializable {
         Cliente novocliente= CadastroClienteController.cliente;
 //        verifica atraves do telefone se o cliente já está cadastrado
 
-            boolean clienteexiste = new ClienteDAO().clienteexiste(novocliente);
-            if (clienteexiste ) {
+        boolean clienteexiste = new ClienteDAO().clienteexiste(novocliente);
+        if (clienteexiste ) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("");
+            alert.setHeaderText(null);
+            alert.setContentText("Cliente já cadastrado");
+            alert.showAndWait();
+        } else {
+            if (novocliente != null) {
+                new ClienteDAO().insert(novocliente);
+                tabelaCliente.getItems().add(CadastroClienteController.cliente);
+            }
+        }
+
+    }
+
+
+//        Edita o cliente selecionado
+    public void editar() throws IOException, SQLException {
+        Cliente clienteselecionado = tabelaCliente.getSelectionModel().getSelectedItem();
+
+        CadastroClienteController.cliente = clienteselecionado;
+
+        AgendaApplication.showModal("cadastro-cliente-view");
+
+        Cliente clienteeditado = CadastroClienteController.cliente;
+        boolean clienteexiste = new ClienteDAO().clienteexiste(clienteeditado);
+        if(clienteexiste){
+            Cliente cliente= new ClienteDAO().clientecadastrado(clienteeditado);
+            if(cliente.codigo==clienteselecionado.codigo){
+                clienteselecionado.codigo = clienteeditado.codigo;
+                clienteselecionado.nome = clienteeditado.nome;
+                clienteselecionado.endereco = clienteeditado.endereco;
+                clienteselecionado.telefone = clienteeditado.telefone;
+                new ClienteDAO().update(clienteeditado);
+                tabelaCliente.refresh();
+            }else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("");
                 alert.setHeaderText(null);
                 alert.setContentText("Cliente já cadastrado");
-
                 alert.showAndWait();
-
-            } else {
-                if (novocliente != null) {
-                    new ClienteDAO().insert(novocliente);
-                    tabelaCliente.getItems().add(CadastroClienteController.cliente);
-                }
             }
+        }else {
 
+           clienteselecionado.codigo = clienteeditado.codigo;
+           clienteselecionado.nome = clienteeditado.nome;
+           clienteselecionado.endereco = clienteeditado.endereco;
+           clienteselecionado.telefone = clienteeditado.telefone;
+            new ClienteDAO().update(clienteeditado);
+           tabelaCliente.refresh();
         }
-
-
-//        Edita o cliente selecionado
-        public void editar() throws IOException, SQLException {
-            Cliente clienteselecionado = tabelaCliente.getSelectionModel().getSelectedItem();
-
-            CadastroClienteController.cliente = clienteselecionado;
-
-            AgendaApplication.showModal("cadastro-cliente-view");
-
-            Cliente clienteeditado = CadastroClienteController.cliente;
-
-                if (clienteselecionado != null) {
-
-                    clienteselecionado.codigo = clienteeditado.codigo;
-                    clienteselecionado.nome = clienteeditado.nome;
-                    clienteselecionado.endereco = clienteeditado.endereco;
-                    clienteselecionado.telefone = clienteeditado.telefone;
-                    new ClienteDAO().update(clienteeditado);
-                    tabelaCliente.refresh();
-                }
     }
 
 //       Exclui o cliente que foi selecionado

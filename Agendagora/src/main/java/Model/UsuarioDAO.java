@@ -126,10 +126,10 @@ public class UsuarioDAO {
     }
 
     public boolean loginexiste(Usuario usuario) throws SQLException {
-        String sql = "select count(*) from usuario  where login= ? and ativook = ? ";
+        String sql = "select count(*) from usuario  where login= ? and ativook = 1 ";
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, usuario.usuario);
-            preparedStatement.setInt(2, AgendaApplication.ativookv);
+
 
 
             try (ResultSet resultado = preparedStatement.executeQuery()) {

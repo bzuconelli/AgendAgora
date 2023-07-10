@@ -40,6 +40,10 @@ public class UsuarioController implements Initializable {
     Button excluir;
     @FXML
     Button informacoes;
+    @FXML
+    Button novo;
+
+
 
     //configura as colunas da na interface grafica
 
@@ -57,6 +61,13 @@ public class UsuarioController implements Initializable {
             tabelaUsuario.getItems().addAll(usuarios);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+        if(UsuarioSigleton.usuarioteste.codigo==1){
+            novo.setVisible(true);
+            excluir.setVisible(true);
+        }else{
+            novo.setVisible(false);
+            excluir.setVisible(false);
         }
     }
     public void novo() throws IOException, SQLException {
