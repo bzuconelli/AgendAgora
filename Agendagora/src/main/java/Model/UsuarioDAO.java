@@ -145,20 +145,20 @@ public class UsuarioDAO {
 
         }
     }
-    public boolean qtdusuarios() throws SQLException {
-        String sql = "select count(*) from usuario where ativook= 1 ";
-        try( Statement statement = ConnectionSigleton.getConnection().createStatement();
-            ResultSet rs = statement.executeQuery(sql)){
-                rs.next();
-                int quantidadedeusuarios = rs.getInt(1);
-
-                if (quantidadedeusuarios > 1) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-        }
+//    public boolean qtdusuarios() throws SQLException {
+//        String sql = "select count(*) from usuario where ativook= 1 ";
+//        try( Statement statement = ConnectionSigleton.getConnection().createStatement();
+//            ResultSet rs = statement.executeQuery(sql)){
+//                rs.next();
+//                int quantidadedeusuarios = rs.getInt(1);
+//
+//                if (quantidadedeusuarios > 1) {
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+//            }
+//
+//        }
     }
 

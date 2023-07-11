@@ -5,19 +5,24 @@ import Model.ServicosDAO;
 import Model.UsuarioSigleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import static java.time.LocalDate.now;
 
 public class MenuPrincipalController  implements Initializable  {
-//
+// Labels da quantidade
     @FXML
     Label diaatual;
     @FXML
@@ -28,6 +33,7 @@ public class MenuPrincipalController  implements Initializable  {
     Label diaatual3;
     @FXML
     Label diaatual4;
+//    Labels do dia
     @FXML
     Label dia1field;
     @FXML
@@ -70,6 +76,16 @@ public class MenuPrincipalController  implements Initializable  {
         AgendaApplication.setRoot("login-view");
 
     }
+    @FXML
+    public void ajuda() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("");
+        alert.setHeaderText(null);
+        alert.setContentText("Problemas  ou duvidas sobre o softwer entre em contato através do o e-mail suporte@agendagora.com.br");
+
+        alert.showAndWait();
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -101,6 +117,32 @@ public class MenuPrincipalController  implements Initializable  {
       dia3field.setText(dataatual2.format(fmt));
       dia4field.setText(dataatual3.format(fmt));
       dia5field.setText(dataatual4.format(fmt));
+      if (dia1>0){
+          diaatual.setBackground(Background.fill(Color.CYAN));
+      }else {
+          diaatual.setBackground(Background.fill(Color.PINK));
+      }
+      if (dia2>0){
+          diaatual1.setBackground(Background.fill(Color.CYAN));
+      }else {
+          diaatual1.setBackground(Background.fill(Color.PINK));
+      }
+      if (dia3>0){
+          diaatual2.setBackground(Background.fill(Color.CYAN));
+      }else {
+          diaatual2.setBackground(Background.fill(Color.PINK));
+      }
+      if (dia4>0){
+          diaatual3.setBackground(Background.fill(Color.CYAN));
+      }else {
+          diaatual3.setBackground(Background.fill(Color.PINK));
+      }
+      if (dia5>0){
+          diaatual4.setBackground(Background.fill(Color.CYAN));
+      }else {
+          diaatual4.setBackground(Background.fill(Color.PINK));
+      }
+
 
 
 

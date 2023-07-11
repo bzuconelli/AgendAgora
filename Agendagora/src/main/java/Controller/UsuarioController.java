@@ -96,9 +96,9 @@ public class UsuarioController implements Initializable {
     @FXML
     public void excluir() throws SQLException, IOException {
         Usuario usuarioselecionado = tabelaUsuario.getSelectionModel().getSelectedItem();
-        if(usuarioselecionado.codigo == UsuarioSigleton.usuarioteste.codigo) {
-            boolean existeoutrousuario= new UsuarioDAO().qtdusuarios();
-            if (existeoutrousuario) {
+        if(UsuarioSigleton.usuarioteste.codigo==1) {
+
+            if (usuarioselecionado.codigo != 1) {
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Excluir Cliente");
@@ -107,25 +107,20 @@ public class UsuarioController implements Initializable {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.get() == ButtonType.OK) {
-                    AgendaApplication.setRoot("login-view");
+
+
                     tabelaUsuario.getItems().remove(usuarioselecionado);
                     new UsuarioDAO().delete(usuarioselecionado);
-                    UsuarioSigleton.usuarioteste=null;
+
 
                 }
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Imformações");
                 alert.setHeaderText(null);
-                alert.setContentText(" Não ha outro usuario criado para poder excluir crie outro usuario primeiro");
+                alert.setContentText(" Não e possivel excluir este usuario");
                 alert.showAndWait();
             }
-        }else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Imformações");
-            alert.setHeaderText(null);
-            alert.setContentText(" Voce so pode excluir  o seu  usuario");
-            alert.showAndWait();
         }
 
     }
@@ -133,7 +128,7 @@ public class UsuarioController implements Initializable {
         Usuario usuarioselecionado = tabelaUsuario.getSelectionModel().getSelectedItem();
 
         CadastroUsuarioController.usuario = usuarioselecionado;
-        if(usuarioselecionado.codigo ==UsuarioSigleton.usuarioteste.codigo) {
+        if(usuarioselecionado.codigo ==UsuarioSigleton.usuarioteste.codigo || UsuarioSigleton.usuarioteste.codigo==1) {
 
         AgendaApplication.showModal("cadastro-login-view");
 
@@ -181,10 +176,10 @@ public class UsuarioController implements Initializable {
         Usuario usuarioselecionado = tabelaUsuario.getSelectionModel().getSelectedItem();
 
         UsuarioInfomacoesController.usuarioinfo = usuarioselecionado;
-        if (usuarioselecionado.codigo == UsuarioSigleton.usuarioteste.codigo) {
+        if (usuarioselecionado.codigo == UsuarioSigleton.usuarioteste.codigo||UsuarioSigleton.usuarioteste.codigo==1) {
             AgendaApplication.showModal("informacoesusuario-view");
             Usuario usuarioeditado = UsuarioInfomacoesController.usuarioinfo;
-            if (usuarioselecionado != null) {
+            if (usuarioselecionado.codigo==UsuarioSigleton.usuarioteste.codigo) {
 
                 usuarioselecionado.qtdvagas = usuarioeditado.qtdvagas;
                 usuarioselecionado.endereco = usuarioeditado.endereco;
@@ -195,6 +190,15 @@ public class UsuarioController implements Initializable {
                 UsuarioSigleton.usuarioteste=usuarioselecionado;
                 tabelaUsuario.refresh();
 
+
+            }else {
+                usuarioselecionado.qtdvagas = usuarioeditado.qtdvagas;
+                usuarioselecionado.endereco = usuarioeditado.endereco;
+                usuarioselecionado.telefone = usuarioeditado.telefone;
+                usuarioselecionado.cpfouCNPJ = usuarioeditado.cpfouCNPJ;
+                usuarioselecionado.ramodeatividade = usuarioeditado.ramodeatividade;
+                new UsuarioDAO().updateinfo(usuarioselecionado);
+                tabelaUsuario.refresh();
 
             }
         } else {

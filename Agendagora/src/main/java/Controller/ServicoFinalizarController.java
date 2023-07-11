@@ -61,11 +61,14 @@ public class ServicoFinalizarController implements Initializable {
             valortotal = Double.parseDouble(valorhoraField.getText()) * Double.parseDouble(totaldehoras.getText());
             valortotalField.setText(Double.toString(valortotal));
             Finalizar.setDisable(false);
-        } Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Informações");
-        alert.setHeaderText(null);
-        alert.setContentText(" O Valor da hora deve ser informado no formato(99.99)");
-        alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+            alert.setTitle("Informações");
+            alert.setHeaderText(null);
+            alert.setContentText(" O Valor da hora deve ser informado no formato(99.99)");
+            alert.showAndWait();
+        }
 
     }
     @FXML

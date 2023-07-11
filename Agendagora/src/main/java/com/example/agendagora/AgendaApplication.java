@@ -25,8 +25,6 @@ public class AgendaApplication extends Application {
         scene = new Scene(loadFXML("login-view"), 800, 600);
         stage.setTitle("AgendAgora!");
         stage.setScene(scene);
-        //stage.setMaximized(true);
-
         stage.show();
         stage.setResizable(false);
 
