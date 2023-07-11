@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -23,19 +22,19 @@
                         <Image url="@AGENDAGORA__1_-removebg-preview (1).png" />
                      </image>
                   </ImageView>
-                  <Button alignment="CENTER" layoutX="246.0" layoutY="54.0" mnemonicParsing="false" onAction="#abrirtelaconfiguracoes" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Usuário">
+                  <Button alignment="CENTER" layoutX="247.0" layoutY="71.0" mnemonicParsing="false" onAction="#abrirtelaconfiguracoes" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Usuário">
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Button>
-                  <Button alignment="CENTER" layoutX="436.0" layoutY="54.0" mnemonicParsing="false" onAction="#abrirtelaservicos" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Serviços">
+                  <Button alignment="CENTER" layoutX="436.0" layoutY="71.0" mnemonicParsing="false" onAction="#abrirtelaservicos" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Serviços">
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Button>
-                  <Button alignment="CENTER" layoutX="619.0" layoutY="54.0" mnemonicParsing="false" onAction="#abrirtelaprojetos" prefHeight="45.0" prefWidth="127.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Histórico">
+                  <Button alignment="CENTER" layoutX="621.0" layoutY="71.0" mnemonicParsing="false" onAction="#abrirtelaprojetos" prefHeight="45.0" prefWidth="127.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Histórico">
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="54.0" mnemonicParsing="false" onAction="#abrirtelaclientes" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Clientes">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="71.0" mnemonicParsing="false" onAction="#abrirtelaclientes" prefHeight="45.0" prefWidth="122.0" style="-fx-text-fill: #000000; -fx-background-color: #FFBD59;" text="Clientes">
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Button>
@@ -50,6 +49,11 @@
    <center>
       <AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="242.0" layoutX="644.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="126.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="242.0" layoutX="493.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" width="126.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="242.0" layoutX="341.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="126.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="242.0" layoutX="181.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="126.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="242.0" layoutX="23.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="126.0" />
             <Button alignment="CENTER" layoutX="695.0" layoutY="358.0" mnemonicParsing="false" onAction="#voltar" prefHeight="22.0" prefWidth="24.0" text="Voltar">
                <effect>
                   <ImageInput>
@@ -59,85 +63,29 @@
                   </ImageInput>
                </effect>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="323.0" layoutX="52.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #d9d9d9;" width="696.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="52.0" />
-            <Line endX="597.0" endY="-16.0" layoutX="149.0" layoutY="93.0" startX="-96.0" startY="-16.0" />
-            <Line endX="219.91632080078125" endY="1.5863399505615234" layoutX="122.0" layoutY="175.0" rotate="90.0" startX="-100.0" />
-            <Line endX="219.91632080078125" endY="1.5863399505615234" layoutX="255.0" layoutY="176.0" rotate="90.0" startX="-100.0" />
-            <Line endX="219.91632080078125" endY="1.5863399505615234" layoutX="403.0" layoutY="174.0" rotate="90.0" startX="-100.0" />
-            <Label fx:id="dia1field" alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="28.0" text="Segunda">
+            <Label fx:id="dia1field" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="59.0" prefHeight="62.0" prefWidth="130.0" text="Segunda">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="dia2field" alignment="CENTER" layoutX="217.0" layoutY="28.0" text="Terça">
+            <Label fx:id="dia2field" alignment="CENTER" layoutX="182.0" layoutY="59.0" prefHeight="62.0" prefWidth="124.0" text="Terça">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="dia3field" alignment="CENTER" layoutX="349.0" layoutY="28.0" text="Quarta">
+            <Label fx:id="dia3field" alignment="CENTER" layoutX="341.0" layoutY="58.0" prefHeight="57.0" prefWidth="125.0" text="Quarta">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="dia4field" alignment="CENTER" layoutX="493.0" layoutY="28.0" text="Quinta">
+            <Label fx:id="dia4field" alignment="CENTER" layoutX="493.0" layoutY="59.0" prefHeight="58.0" prefWidth="125.0" text="Quinta">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="dia5field" alignment="CENTER" layoutX="643.0" layoutY="28.0" text="Sexta">
+            <Label fx:id="dia5field" alignment="CENTER" layoutX="645.0" layoutY="58.0" prefHeight="64.0" prefWidth="124.0" text="Sexta">
                <font>
                   <Font name="Arial Black" size="26.0" />
-               </font>
-            </Label>
-            <Label fx:id="diaatual" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="165.0" prefHeight="121.0" prefWidth="117.0" textAlignment="JUSTIFY">
-               <font>
-                  <Font name="Arial Black" size="35.0" />
-               </font>
-            </Label>
-            <Label fx:id="diaatual1" alignment="CENTER" contentDisplay="CENTER" layoutX="186.0" layoutY="165.0" prefHeight="122.0" prefWidth="126.0" textAlignment="JUSTIFY">
-               <font>
-                  <Font name="Arial Black" size="35.0" />
-               </font>
-            </Label>
-            <Label fx:id="diaatual2" alignment="CENTER" contentDisplay="CENTER" layoutX="324.0" layoutY="170.0" prefHeight="119.0" prefWidth="129.0" textAlignment="JUSTIFY">
-               <font>
-                  <Font name="Arial Black" size="35.0" />
-               </font>
-            </Label>
-            <Label fx:id="diaatual3" alignment="CENTER" contentDisplay="CENTER" layoutX="469.0" layoutY="166.0" prefHeight="123.0" prefWidth="129.0" textAlignment="JUSTIFY">
-               <font>
-                  <Font name="Arial Black" size="35.0" />
-               </font>
-            </Label>
-            <Label fx:id="diaatual4" alignment="CENTER" contentDisplay="CENTER" layoutX="612.0" layoutY="170.0" prefHeight="119.0" prefWidth="128.0" textAlignment="JUSTIFY">
-               <font>
-                  <Font name="Arial Black" size="35.0" />
-               </font>
-            </Label>
-            <Line endX="219.91632080078125" endY="1.5863399505615234" layoutX="546.0" layoutY="175.0" rotate="90.0" startX="-100.0" />
-            <Label layoutX="66.0" layoutY="77.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="197.0" layoutY="77.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="337.0" layoutY="77.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="478.0" layoutY="77.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="626.0" layoutY="77.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
                </font>
             </Label>
             <Button layoutX="53.0" layoutY="358.0" mnemonicParsing="false" onAction="#ajuda" prefHeight="20.0" prefWidth="47.0" text="Ajuda">
@@ -149,6 +97,56 @@
                   </ImageInput>
                </effect>
             </Button>
+            <Label fx:id="diaatual" alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="190.0" prefHeight="94.0" prefWidth="103.0" text="2" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Arial Black" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="115.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="192.0" layoutY="117.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="348.0" layoutY="117.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="504.0" layoutY="115.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="655.0" layoutY="117.0" prefHeight="68.0" prefWidth="104.0" text="Vagas &#10;Disponíveis" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="diaatual1" alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="190.0" prefHeight="94.0" prefWidth="103.0" text="2" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Arial Black" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="diaatual2" alignment="CENTER" contentDisplay="CENTER" layoutX="352.0" layoutY="190.0" prefHeight="94.0" prefWidth="103.0" text="2" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Arial Black" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="diaatual3" alignment="CENTER" contentDisplay="CENTER" layoutX="505.0" layoutY="190.0" prefHeight="94.0" prefWidth="103.0" text="2" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Arial Black" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="diaatual4" alignment="CENTER" contentDisplay="CENTER" layoutX="656.0" layoutY="190.0" prefHeight="94.0" prefWidth="103.0" text="2" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Arial Black" size="50.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

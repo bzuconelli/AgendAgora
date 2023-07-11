@@ -117,37 +117,37 @@ public class MenuPrincipalController  implements Initializable  {
       dia3field.setText(dataatual2.format(fmt));
       dia4field.setText(dataatual3.format(fmt));
       dia5field.setText(dataatual4.format(fmt));
+
       if (dia1>0){
-          diaatual.setBackground(Background.fill(Color.CYAN));
+          diaatual.setBackground(Background.fill(Color.ORANGE));
       }else {
-          diaatual.setBackground(Background.fill(Color.PINK));
+          diaatual.setBackground(Background.fill(Color.DARKGRAY));
       }
       if (dia2>0){
-          diaatual1.setBackground(Background.fill(Color.CYAN));
+          diaatual1.setBackground(Background.fill(Color.ORANGE));
       }else {
-          diaatual1.setBackground(Background.fill(Color.PINK));
+          diaatual1.setBackground(Background.fill(Color.DARKGRAY));
       }
       if (dia3>0){
-          diaatual2.setBackground(Background.fill(Color.CYAN));
+          diaatual2.setBackground(Background.fill(Color.ORANGE));
       }else {
-          diaatual2.setBackground(Background.fill(Color.PINK));
+          diaatual2.setBackground(Background.fill(Color.DARKGRAY));
       }
       if (dia4>0){
-          diaatual3.setBackground(Background.fill(Color.CYAN));
+          diaatual3.setBackground(Background.fill(Color.ORANGE));
       }else {
-          diaatual3.setBackground(Background.fill(Color.PINK));
+          diaatual3.setBackground(Background.fill(Color.DARKGRAY));
       }
       if (dia5>0){
-          diaatual4.setBackground(Background.fill(Color.CYAN));
+          diaatual4.setBackground(Background.fill(Color.ORANGE));
       }else {
-          diaatual4.setBackground(Background.fill(Color.PINK));
+          diaatual4.setBackground(Background.fill(Color.DARKGRAY));
       }
-
-
 
 
 
     }
-
-
 }
+
+
+
