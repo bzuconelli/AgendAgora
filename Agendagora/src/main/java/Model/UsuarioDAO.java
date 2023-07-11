@@ -34,7 +34,7 @@ public class UsuarioDAO {
     }
 
     public void insert(Usuario novousuario) throws SQLException {
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("insert into usuario (login,senha,nome,ativook) value (?,?,?,1 )", Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("insert into usuario (login,senha,nome,ativook) value (?,?,?,'1' )", Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, novousuario.usuario);
             preparedStatement.setString(2, novousuario.senha);
             preparedStatement.setString(3, novousuario.nome);

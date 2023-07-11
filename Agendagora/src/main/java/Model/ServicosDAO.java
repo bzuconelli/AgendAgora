@@ -17,7 +17,7 @@ public class ServicosDAO {
                 "from ordendeservico as os " + //
                 "inner join cliente as c " + //
                 "on os.cliente_clienteid = c.clienteid " + //
-                "where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ? and c.ativook= 1";
+                "where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ? ";
         if (apenasDiaAtual) {
             sql += " and os.datadoservico = curdate()";
         }

@@ -50,10 +50,7 @@ public class ClienteDAO {
             preparedStatement.setInt(1, clienteexcluido.codigo);
             preparedStatement.execute();
         }
-        try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement("update ordendeservico set estadodaordem = 'clienteexcluido' where cliente_clienteid = ? and estadodaordem='aberto' ")) {
-            preparedStatement.setInt(1, clienteexcluido.codigo);
-            preparedStatement.execute();
-        }
+
     }
 
     public void update(Cliente clienteselecionado) throws SQLException {

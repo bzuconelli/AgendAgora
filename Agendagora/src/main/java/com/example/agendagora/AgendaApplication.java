@@ -48,7 +48,10 @@ public class AgendaApplication extends Application {
         modalDialog.initModality(Modality.APPLICATION_MODAL);
         modalDialog.initOwner(primaryStage);
         modalDialog.setScene(scene);
+        modalDialog.setResizable(false);
+        modalDialog.setMaximized(false);
         modalDialog.showAndWait();
+
 
     }
 
