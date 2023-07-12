@@ -109,6 +109,7 @@ public class UsuarioController implements Initializable {
                 if (result.get() == ButtonType.OK) {
 
 
+
                     tabelaUsuario.getItems().remove(usuarioselecionado);
                     new UsuarioDAO().delete(usuarioselecionado);
 

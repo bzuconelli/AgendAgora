@@ -17,13 +17,18 @@ public class ServicosDAO {
                 "from ordendeservico as os " + //
                 "inner join cliente as c " + //
                 "on os.cliente_clienteid = c.clienteid " + //
-                "where os.estadodaordem = 'aberto' and os.usuario_usuarioid = ? ";
+                "where os.estadodaordem = 'aberto'  ";
         if (apenasDiaAtual) {
             sql += " and os.datadoservico = curdate()";
         }
+        if(UsuarioSigleton.usuarioteste.codigo >1){
+            sql+="and os.usuario_usuarioid = ?";
+        }
 
         try (PreparedStatement preparedStatement = ConnectionSigleton.getConnection().prepareStatement(sql)) {
-            preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
+            if(UsuarioSigleton.usuarioteste.codigo >1) {
+                preparedStatement.setInt(1, UsuarioSigleton.usuarioteste.codigo);
+            }
             try (ResultSet rs = preparedStatement.executeQuery()) {
 
                 List<Servico> servicos = new ArrayList<>();

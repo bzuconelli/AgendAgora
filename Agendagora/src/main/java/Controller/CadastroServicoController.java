@@ -61,7 +61,7 @@ public class CadastroServicoController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Iformações");
                 alert.setHeaderText(null);
-                alert.setContentText(" Sem vagas dispoivel neste dia " );
+                alert.setContentText(" Sem vagas disponíveis neste dia " );
 
                 alert.showAndWait();
 
