@@ -59,9 +59,9 @@ public class CadastroServicoController implements Initializable {
                 AgendaApplication.closeCurrentWindow();
             }else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Iformações");
+                alert.setTitle("Informações");
                 alert.setHeaderText(null);
-                alert.setContentText(" Sem vagas disponíveis neste dia " );
+                alert.setContentText(" Sem vagas disponíveis neste dia! " );
 
                 alert.showAndWait();
 
@@ -69,9 +69,9 @@ public class CadastroServicoController implements Initializable {
 
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Iformações");
+            alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos" );
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com '*' devem ser preenchidos" );
 
             alert.showAndWait();
 
@@ -98,7 +98,7 @@ public class CadastroServicoController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Informações");
                     alert.setHeaderText(null);
-                    alert.setContentText("O campo telefone deve ser prenchido no formato(DD)xxxxxxxxx" );
+                    alert.setContentText("O campo telefone deve ser prenchido no formato (DDD)999999999" );
 
                     alert.showAndWait();
                 }

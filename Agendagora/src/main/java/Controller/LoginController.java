@@ -37,7 +37,7 @@ public class LoginController {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle(null);
             alert.setHeaderText(null);
-            alert.setContentText("Usuario ou senha incorretos!!");
+            alert.setContentText("Usuário ou senha incorretos!");
             alert.showAndWait();
 
         }

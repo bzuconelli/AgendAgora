@@ -81,7 +81,7 @@ public class MenuPrincipalController  implements Initializable  {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("");
         alert.setHeaderText(null);
-        alert.setContentText("Problemas  ou duvidas sobre o softwer entre em contato através do o e-mail suporte@agendagora.com.br");
+        alert.setContentText("Problemas  ou dúvidas sobre o software entre em contato através do o e-mail suporte@agendagora.com.br");
 
         alert.showAndWait();
 

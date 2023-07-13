@@ -53,7 +53,7 @@ public class UsuarioInfomacoesController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Informações");
                 alert.setHeaderText(null);
-                alert.setContentText("O campo telefone deve ser prenchido no formato(DD)xxxxxxxxx" );
+                alert.setContentText("O campo telefone deve ser prenchido no formato (DDD)999999999" );
 
                 alert.showAndWait();
             }
@@ -61,7 +61,7 @@ public class UsuarioInfomacoesController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos");
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com '*' devem ser preenchidos");
 
             alert.showAndWait();
         }
@@ -88,7 +88,7 @@ public class UsuarioInfomacoesController implements Initializable {
             CPFouCPJField.setText(usuarioselecionado.cpfouCNPJ);
         }
         if (qtdvagasField.getText().equals("0")){
-            qtdvasgas.setText("A quantidade de atendimentos deve ser mairo que 0");
+            qtdvasgas.setText("A quantidade de atendimentos deve ser maior que 0");
         }
         ramodeatividadeField.textProperty().addListener((o, oldValue, newValue) -> {
             ramodeatividadeField.setText(newValue.replaceAll("(\\d+)|", ""));

@@ -47,9 +47,9 @@ public class CadastroUsuarioController implements Initializable {
         } else {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Imformações");
+            alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com * devem ser preenchidos");
+            alert.setContentText(" Um ou mais campos estão vazios. Todos os campos com '*' devem ser preenchidos");
 
             alert.showAndWait();
         }

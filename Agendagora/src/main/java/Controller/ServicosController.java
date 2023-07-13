@@ -109,9 +109,9 @@ public class ServicosController implements Initializable {
         if(servicoselecionado != null) {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Excluir Cliente");
+            alert.setTitle("Excluir cliente");
             alert.setHeaderText(null);
-            alert.setContentText("Deseja cancelar o servico de " + " " + servicoselecionado.cliente.nome + " " + "?");
+            alert.setContentText("Deseja cancelar o serviço de " + " " + servicoselecionado.cliente.nome + " " + "?");
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {

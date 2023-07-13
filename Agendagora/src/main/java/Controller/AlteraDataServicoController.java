@@ -44,9 +44,9 @@ public class AlteraDataServicoController implements Initializable {
         }else {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Iformações");
+            alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Sem vagas dispoivel neste dia ");
+            alert.setContentText(" Sem vagas disponíveis neste dia ");
 
             alert.showAndWait();
         }

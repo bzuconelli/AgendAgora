@@ -137,7 +137,7 @@ public class ClienteController implements Initializable {
         if(clienteselecionado != null) {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Excluir Cliente");
+            alert.setTitle("Excluir cliente");
             alert.setHeaderText(null);
             alert.setContentText("Deseja excluir" + " " + clienteselecionado.nome + " " + "?");
 

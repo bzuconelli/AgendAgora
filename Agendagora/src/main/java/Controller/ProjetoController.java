@@ -55,7 +55,7 @@ public class ProjetoController  {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("");
                 alert.setHeaderText(null);
-                alert.setContentText("Cliente não cadastrado");
+                alert.setContentText("Cliente não cadastrado!");
 
                 alert.showAndWait();
             }

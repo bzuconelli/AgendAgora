@@ -83,9 +83,9 @@ public class UsuarioController implements Initializable {
             } else {
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Imformações");
+                alert.setTitle("Informações");
                 alert.setHeaderText(null);
-                alert.setContentText("O login Ja existe digite outro ");
+                alert.setContentText("O login já existe, digite outro! ");
                 alert.showAndWait();
 
             }
@@ -101,7 +101,7 @@ public class UsuarioController implements Initializable {
             if (usuarioselecionado.codigo != 1) {
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Excluir Cliente");
+                alert.setTitle("Excluir cliente");
                 alert.setHeaderText(null);
                 alert.setContentText("Deseja excluir" + " " + usuarioselecionado.nome + " " + "?");
 
@@ -117,9 +117,9 @@ public class UsuarioController implements Initializable {
                 }
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Imformações");
+                alert.setTitle("Informações");
                 alert.setHeaderText(null);
-                alert.setContentText(" Não e possivel excluir este usuario");
+                alert.setContentText(" Não é possível excluir este usuário");
                 alert.showAndWait();
             }
         }
@@ -140,7 +140,7 @@ public class UsuarioController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Troca de login ou senha");
             alert.setHeaderText(null);
-            alert.setContentText("Ao trocar a senha ou login você sera direcionado tela de login");
+            alert.setContentText("Ao trocar a senha ou login você será direcionado tela de login");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 usuarioselecionado.codigo = usuarioeditado.codigo;
@@ -165,9 +165,9 @@ public class UsuarioController implements Initializable {
         }else {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Imformações");
+            alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Voce so pode alterar as informações do seu usuario");
+            alert.setContentText(" Você só pode alterar as informações do seu usuário");
             alert.showAndWait();
 
         }
@@ -205,9 +205,9 @@ public class UsuarioController implements Initializable {
         } else {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Imformações");
+            alert.setTitle("Informações");
             alert.setHeaderText(null);
-            alert.setContentText(" Você so pode alterar as informações do seu usuario");
+            alert.setContentText(" Você só pode alterar as informações do seu usuário");
             alert.showAndWait();
 
         }
